@@ -6,14 +6,14 @@ import docImg from "../../assets/img/about_Section.png";
 import wearImg from "../../assets/img/about3.png";
 import {BsCheckCircleFill} from "react-icons/bs"
 import Offer from "../../Components/Offer/Offer";
+import Banner from "../../Components/Banner/Banner";
 import "./About.scss";
 
 const About = () => {
     return (
         <React.Fragment>
-            <div className={'about_main'}>
-               <h1>ABOUT US</h1>
-            </div>
+            <Banner heading={'ABOUT US'} cssClass={'about_main'} />
+
             <div className={'about_section'}>
                 <Container fluid>
                     <Row>

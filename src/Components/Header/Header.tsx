@@ -39,10 +39,10 @@ const Header = () => {
             <hr className={'divider'} />
             {/*-------------------------Collection section---------------------------*/}
             <Container className={'collection_section'}>
-                <Navbar expand="lg">
+                <Navbar style={{overflow: 'hidden'}} expand="lg">
                     <Container>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav" className={'d-flex justify-content-center'}>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav1" />
+                        <Navbar.Collapse id="basic-navbar-nav1" className={'justify-content-center'}>
                             <Nav className="mr-auto">
                                 <Nav.Link>WOMEN</Nav.Link>
                                 <Nav.Link>MEN</Nav.Link>
