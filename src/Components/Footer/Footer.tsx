@@ -36,7 +36,7 @@ const Footer = () => {
                     <li><NavLink to="/">FAQ </NavLink></li>
                     <li><NavLink to="/contact">CONTACT US </NavLink></li>
                     <li><NavLink to="/policy">RETURN POLICY </NavLink></li>
-                    <li><NavLink to="/term-condition">TERMS & CONDITIONS </NavLink></li>
+                    <li><NavLink to="/terms-condition">TERMS & CONDITIONS </NavLink></li>
                     <li><NavLink to="/policy">PRIVACY POLICY </NavLink></li>
                     <li><NavLink to="/careers">CAREERS </NavLink></li>
                 </ul>
