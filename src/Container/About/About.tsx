@@ -1,11 +1,10 @@
 import React from 'react';
 import {Container, Row, Col} from "react-bootstrap";
-// @ts-ignore
 import docImg from "../../assets/img/about_Section.png";
-// @ts-ignore
 import wearImg from "../../assets/img/about3.png";
 import {BsCheckCircleFill} from "react-icons/bs"
 import Offer from "../../Components/Offer/Offer";
+import Testimonial from "../../Components/Testimonial/Testimonial";
 import Banner from "../../Components/Banner/Banner";
 import "./About.scss";
 
@@ -16,7 +15,7 @@ const About = () => {
 
             <div className={'about_section'}>
                 <Container fluid>
-                    <Row>
+                    <Row className={'mt-5'}>
                         <Col md={6}>
                             <Container className={'about_text_section'}>
                                 <h4>About medical Scrubs</h4>
@@ -112,6 +111,9 @@ const About = () => {
                 </div>
 
                 <Offer />
+
+                <Testimonial />
+
             </div>
         </React.Fragment>
     );

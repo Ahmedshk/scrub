@@ -1,0 +1,43 @@
+.upload_photo_section{
+  //margin: 40px 0;
+  margin-bottom: 30px;
+
+  .Add_your_photo {
+    background-image: url("../../assets/img/add-your-photo.png");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #d9d1d1;
+    height: 260px;
+    margin-top: 70px;
+    .inner_add_photo {
+      padding: 40px 40px;
+      width: 350px;
+    }
+
+    .with_us_text {
+      font-size: 20px;
+      position: relative;
+      font-family: serif;
+      bottom: 9px;
+    }
+  }
+  .upload_photo {
+    border: 1px solid #d9d1d1;
+    height: 260px;
+    margin-top: 70px;
+
+    .inner_upload_photo {
+      border: 1px solid #d9d1d1;
+      height: 200px;
+      width: 500px;
+      flex-direction: column;
+      margin: 20px;
+    }
+
+    .upload_icon {
+      font-size: 40px;
+    }
+  }
+}
+
+

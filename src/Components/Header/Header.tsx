@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Nav, Navbar} from "react-bootstrap";
+import {NavLink} from "react-router-dom"
 import { BiSearch } from 'react-icons/bi';
 import {HiOutlineShoppingBag} from "react-icons/hi";
 import "./Header.scss";
@@ -12,13 +13,13 @@ const Header = () => {
                 <Container>
                     <Navbar expand="lg">
                         <Container>
-                            <Navbar.Brand>FREE SHIPPING / RETURNS ON ORDERS OVER $100 WITHIN US</Navbar.Brand>
+                            <p>FREE SHIPPING / RETURNS ON ORDERS OVER $100 WITHIN US</p>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav" className={'justify-content-end'}>
                                 <Nav className="mr-auto">
-                                    <Nav.Link>ABOUT US</Nav.Link>
-                                    <Nav.Link>CONTACT US</Nav.Link>
-                                    <Nav.Link>ORDER STATUS</Nav.Link>
+                                    <Nav.Link href="/about">ABOUT US</Nav.Link>
+                                    <Nav.Link href={'/contact'}>CONTACT US</Nav.Link>
+                                    <Nav.Link href={'/order'}>ORDER STATUS</Nav.Link>
                                     <Nav.Link>SIGN IN / SIGN UP</Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
@@ -29,7 +30,7 @@ const Header = () => {
             {/*--------------------------Logo Section-------------------------------*/}
             <Container>
                 <div className={'logo_section'}>
-                    <h2>LOGO</h2>
+                    <h2><NavLink to='/'> LOGO </NavLink></h2>
                     <div className={'icon_section'}>
                         <BiSearch />
                         <HiOutlineShoppingBag />

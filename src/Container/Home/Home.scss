@@ -1,0 +1,108 @@
+.cover_section_container {
+  margin-top: 40px;
+
+  .cover_image {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.Group_container {
+  margin-top: 40px;
+
+  .collection_container {
+    padding: 70px;
+    border: 1px solid grey;
+    margin-top: 10px;
+    height: 100%;
+
+    .womens_collection_head {
+      font-family: serif;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .btn_collection {
+      width: 200px;
+      height: 51px;
+      background: white;
+      border: 1px solid #003f67;
+      color: #003f67;
+    }
+  }
+
+  .caption_container {
+    padding: 70px;
+    border: 1px solid grey;
+    height: 100%;
+
+    .mens_collection_head {
+      font-family: serif;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .btn_collection {
+      width: 200px;
+      height: 51px;
+      background: white;
+      border: 1px solid #003f67;
+      color: #003f67;
+    }
+  }
+
+  .collection_images {
+    margin-bottom: 20px;
+    height: 100%;
+    margin-top: 10px;
+
+    .image_collect {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .collection_container {
+      margin-top: 63px !important;
+    }
+
+    .images_container {
+      margin-top: 50px !important;
+    }
+    .image_collection {
+      margin-top: 50px !important;
+    }
+    .caption_container {
+      margin-top: 83px !important ;
+    }
+  }
+}
+
+.group_look{
+  margin: 70px 0;
+  .Group_bg_image {
+    background-image: url("../../assets/img/grouo-cover.jpg");
+    background-size: cover;
+    padding: 40px;
+
+    .cover_title {
+      color: white;
+      font-family: serif;
+    }
+
+    .cover_text {
+      color: white;
+    }
+
+    .contact_btn {
+      width: 200px;
+      height: 51px;
+      background: white;
+      color: #003f67;
+      font-size: 20px;
+      border-style: none !important;
+    }
+  }
+}

@@ -3,11 +3,17 @@
 .header{
   background-color: $bgColor;
 
-  .navbar-brand, .nav-link {
+  .navbar {
+    overflow: hidden !important;
+  }
+
+  p, .nav-link {
    color: #fff !important;
     font-size: 14px;
     font-weight: 500;
+    margin: 0;
   }
+
 }
 .divider{
   margin: 0;
@@ -32,6 +38,12 @@
 
   }
   .nav-link{
+    color: #000 !important;
+  }
+}
+
+a{
+  &:hover{
     color: #000 !important;
   }
 }

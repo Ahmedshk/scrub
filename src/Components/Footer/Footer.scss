@@ -37,6 +37,7 @@
         width: 100%;
         border-bottom: 1px solid #80808045;
     }
+
     .footer_logo{
         display: flex;
         flex-direction: column;
@@ -46,6 +47,7 @@
 
         ul{
             display: flex;
+            flex-wrap: wrap;
             list-style-type: none;
             font-weight: 500;
             margin-top: 20px;
@@ -89,6 +91,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     background-color: #F5F8FA;
     padding: 20px 10px;
 
@@ -112,4 +115,46 @@
             box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
         }
     }
+}
+
+@media (max-width: 767px) {
+
+    .footer{
+
+        .footer_logo{
+            ul{
+                justify-content: center;
+                padding: 15px 15px;
+
+                li{
+                    padding-bottom: 15px;
+
+
+                }
+            }
+        }
+
+        .footer_form {
+
+            Button{
+              display: flex;
+                justify-content: center;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+        }
+    }
+
+    .all_rights{
+        p{
+            padding-bottom: 10px;
+        }
+    }
+
+}
+
+a{
+    color: #000;
+    text-decoration: none;
 }
