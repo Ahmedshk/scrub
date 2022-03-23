@@ -2,7 +2,6 @@
 
 .header{
   background-color: $bgColor;
-
   .navbar {
     overflow: hidden !important;
   }
@@ -35,16 +34,13 @@
 
   .Navbar {
     overflow: hidden;
-
   }
   .nav-link{
     color: #000 !important;
   }
 }
-
 a{
   &:hover{
     color: #000 !important;
   }
 }
-
