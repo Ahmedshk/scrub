@@ -4,11 +4,17 @@
     font-family: Montserrat;
     font-weight: bold;
     margin-top: 20px;
+    text-align: center;
   }
 
   .inner_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-flow: wrap;
+
+    .colors_section{
+      margin: 30px;
+    }
   }
-
-
 }

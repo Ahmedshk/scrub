@@ -52,11 +52,11 @@ const ProductColors = () => {
     ]
     return (
         <Container className="shop_container">
-            <h3 className={'text-center'}> SHOP BY COLOR </h3>
-            <div className='d-flex justify-content-center align-items-center inner_container'>
+            <h3> SHOP BY COLOR </h3>
+            <div className='inner_container'>
                 {
                     colors.map((color, index) => (
-                        <div className='Colors text-center mt-4 mx-4'>
+                        <div className='colors_section'>
                             <img src={color.img} alt={color.name} width={50} height={50}/>
                             <p className='mt-3'>{color.name}</p>
                         </div>

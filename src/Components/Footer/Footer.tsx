@@ -1,5 +1,4 @@
  import React from 'react';
-import {NavLink} from "react-router-dom";
  import {Button, Container} from "react-bootstrap";
 import {FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram} from "react-icons/fa";
 // @ts-ignore
@@ -30,15 +29,14 @@ const Footer = () => {
                 <p className={'text-center'}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     Lorem Ipsum <br /> is simply dummy text of the printing and typesetting industry.</p>
                 <ul>
-                    <li><NavLink to="/order"> ORDER STATUS </NavLink></li>
-                    <li><NavLink to="/about">ABOUT US </NavLink></li>
-                    <li><NavLink to="/"> PRODUCT/CATEGORY </NavLink></li>
-                    <li><NavLink to="/">FAQ </NavLink></li>
-                    <li><NavLink to="/contact">CONTACT US </NavLink></li>
-                    <li><NavLink to="/policy">RETURN POLICY </NavLink></li>
-                    <li><NavLink to="/terms-condition">TERMS & CONDITIONS </NavLink></li>
-                    <li><NavLink to="/policy">PRIVACY POLICY </NavLink></li>
-                    <li><NavLink to="/careers">CAREERS </NavLink></li>
+                    <li onClick={() => window.location.href='/order'}>ORDER STATUS</li>
+                    <li onClick={() => window.location.href='/about'}> ABOUT US </li>
+                    <li onClick={() => window.location.href='/'}>PRODUCT </li>
+                    <li onClick={() => window.location.href='/'}>FAQ </li>
+                    <li onClick={() => window.location.href='/contact'}> CONTACT US </li>
+                    <li onClick={() => window.location.href='/policy'}> RETURN POLICY </li>
+                    <li onClick={() => window.location.href='/terms-condition'}> TERMS </li>
+                    <li onClick={() => window.location.href='/careers'}>CAREERS </li>
                 </ul>
             </div>
 
@@ -56,7 +54,7 @@ const Footer = () => {
         </div>
         <div className={'all_rights'}>
             <Container>
-                <p>© 2022. All Rights Reserved.</p>
+                <p>© 2021 Hands of Hope. All Rights Reserved.</p>
 
                 <div className={'payment_method'}>
                     <p>Payment method</p>

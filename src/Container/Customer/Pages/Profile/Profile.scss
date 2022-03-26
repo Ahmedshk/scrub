@@ -1,0 +1,24 @@
+.profile_section{
+  justify-content: center;
+  align-items: center;
+
+  Button{
+      position: relative;
+      float: right;
+      padding: 10px 15px;
+      font-size: 12px;
+      border: none;
+      background-color: #003f67;
+      color: white;
+  }
+
+  .profile_img{
+    display: flex;
+    justify-content: flex-end;
+    img{
+      width: 150px;
+      height: 150px;
+      border-radius: 100px;
+    }
+  }
+}

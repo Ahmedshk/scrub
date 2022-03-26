@@ -1,12 +1,11 @@
 import React from 'react';
 import { MdArrowForwardIos } from 'react-icons/md';
 import { MdArrowBackIos } from 'react-icons/md';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 // @ts-ignore
 import Slider from 'react-slick';
 import PeoplesImage from '../../../assets/img/peoples_image1.png';
 import "./HomeSlider.scss";
-
 
 const HomeSlider = () => {
 
@@ -78,36 +77,35 @@ const HomeSlider = () => {
     };
 
     return (
-        <Container  className='main_container'>
-            <Row>
-                <Col md={12}>
-                    <Slider {...settings} className='background_slider' >
-                        <div className="caption_container">
-                            <h3 className='feature_head'>FEATURING AFFORDABLE</h3>
-                            <h5 className='accessories'>SCRUBS, MEDICAL <br /> ACCESSORIES</h5>
-                            <small>Lorem ipsum dolor sit amet consectetur Eveniet velit cupiditate corrupti voluptatum!  </small>
-                            <button className='shop_now'>Shop Now</button>
-                        </div>
+        <div className='main_container'>
+            <Container>
+                <Slider {...settings} className='background_slider'>
+                    <div className="caption_container">
+                        <h3> FEATURING AFFORDABLE </h3>
+                        <h5> SCRUBS, MEDICAL <br /> ACCESSORIES </h5>
+                        <small>Lorem ipsum dolor sit amet consectetur Eveniet velit cupiditate corrupti voluptatum!  </small>
+                        <button>Shop Now</button>
+                    </div>
 
-                        <div className='sliding_img_container'>
-                            <img src={PeoplesImage} className='slider_rolling_image' alt={'img'} />
-                        </div>
+                    <div className='sliding_img_container'>
+                        <img src={PeoplesImage} alt={'img'} />
+                    </div>
 
-                        <div className="caption_container">
-                            <h3 className='feature_head'>FEATURING AFFORDABLE</h3>
-                            <h5 className='accessories'>SCRUBS, MEDICAL, ACCESSORIES</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur Eveniet velit cupiditate corrupti voluptatum!  </p>
-                            <button className='shop_now'>Shop Now</button>
-                        </div>
+                    <div className="caption_container">
+                        <h3> FEATURING AFFORDABLE </h3>
+                        <h5> SCRUBS, MEDICAL <br /> ACCESSORIES </h5>
+                        <small>Lorem ipsum dolor sit amet consectetur Eveniet velit cupiditate corrupti voluptatum!  </small>
+                        <button>Shop Now</button>
+                    </div>
 
-                        <div className='sliding_img_container'>
-                            <img src={PeoplesImage} className='slider_rolling_image' alt={'img'} />
-                        </div>
-                    </Slider>
-                </Col>
-            </Row>
-        </Container>
+                    <div className='sliding_img_container'>
+                        <img src={PeoplesImage} alt={'img'} />
+                    </div>
+                    
+                </Slider>
+            </Container>
+        </div>
+
     );
 };
-
 export default HomeSlider;

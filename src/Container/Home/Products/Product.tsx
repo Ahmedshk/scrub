@@ -129,56 +129,44 @@ const CardSlider = () => {
     };
 
     return (
-            <React.Fragment>
+        <React.Fragment>
                 <ProductColors />
 
-            <Container fluid="md">
-
-                <Row>
-                    <Col>
-                        <Slider {...settings} >
-
-                            {
-                                cardData.map((data) => {
-                                    const { id, img, cardTitle, cardText } = data
-                                    return (
-                                        <div className='cursor_pointer' key={id}>
-                                            <Card className="cards_slider" >
-                                                <Card.Img variant="top" className="card_img" src={img} height={300} />
-                                                <div className='addToCard_container'>
-                                                    <div className='add_tocart'>
-                                                        <BsCart />
-                                                    </div>
-                                                    <div className='heart_container'>
-                                                        <AiOutlineHeart />
-                                                    </div>
-                                                </div>
-                                                <Card.Body>
-                                                    <Card.Title>
-                                                        {cardTitle}
-                                                    </Card.Title>
-
-                                                    <Card.Text>
-                                                        {cardText}
-                                                    </Card.Text>
-                                                    <button className='btn_shop_now'>Shop Now</button>
-                                                </Card.Body>
-                                            </Card>
+            <Container>
+                <Slider {...settings} >
+                    {
+                        cardData.map((data) => {
+                            const { id, img, cardTitle, cardText } = data
+                            return (
+                                <div className='cursor_pointer' key={id}>
+                                    <Card className="cards_slider">
+                                        <Card.Img variant="top" className="card_img" src={img} height={300} />
+                                        <div className='addToCard_container'>
+                                            <div className='add_to_cart'>
+                                                <BsCart />
+                                            </div>
+                                            <div className='heart_container'>
+                                                <AiOutlineHeart />
+                                            </div>
                                         </div>
-                                    )
-                                })
-                            }
+                                        <Card.Body>
+                                            <Card.Title>
+                                                {cardTitle}
+                                            </Card.Title>
 
-                        </Slider>
-
-                    </Col>
-
-                </Row>
-
+                                            <Card.Text>
+                                                {cardText}
+                                            </Card.Text>
+                                            <button>Shop Now</button>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            )
+                        })
+                    }
+                </Slider>
             </Container>
-            </React.Fragment>
-
+        </React.Fragment>
     )
 }
-
 export default CardSlider

@@ -1,12 +1,11 @@
 .cards_slider {
-  margin-top: 20px;
   width: 18rem;
   margin: 0 auto;
   text-align: center;
-  font-family: Montserrat;
+  font-family: Montserrat, serif;
 
   .card_img{
-    padding: 10px 10px;
+    padding: 10px;
   }
 
   .addToCard_container {
@@ -16,9 +15,9 @@
     width: 100%;
     padding: 10px 10px;
     gap: 10px;
-    display: none;
+    visibility: hidden;
 
-    .add_tocart {
+    .add_to_cart {
       border-radius: 50%;
       width: 35px;
       height: 35px;
@@ -37,24 +36,28 @@
     }
   }
 
-  .btn_shop_now {
+  Button {
     width: 120px;
     height: 34px;
     margin: 0 auto;
     background-color: #003f67;
     border: none;
     color: white;
-    display: none;
+    visibility: hidden;
   }
 }
 
-.cursor_pointer:hover {
+.cursor_pointer{
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  .addToCard_container {
-    display: flex;
-  }
-  .btn_shop_now {
-    display: block;
+  transition: all 0.5s ease;
+
+  &:hover{
+
+    .addToCard_container {
+      visibility: visible;
+    }
+    Button {
+      visibility: visible;
+    }
   }
 }

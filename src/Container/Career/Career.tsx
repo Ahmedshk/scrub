@@ -49,7 +49,7 @@ const Career = () => {
                                     <Col md={6}>
                                         <Form.Group className="mb-3">
                                             <label className='label_text'>Phone</label>
-                                            <Form.Control type="number" placeholder="Enter phone number" />
+                                            <Form.Control type="text" placeholder="Enter phone number" />
                                         </Form.Group>
                                     </Col>
                                     <Col md={12}>
@@ -72,11 +72,20 @@ const Career = () => {
                                                 renderInput={(params) => <TextField {...params} />}
                                             />
                                         </LocalizationProvider>
+                                    </Col>
+                                    <Col md={12}>
+                                        <Form.Group className="mb-3">
+                                            <label className='label_text'>Upload file</label>
+                                            <Form.Control type="file" />
+                                        </Form.Group>
+                                    </Col>
 
-                                        <button className='submit_btn mt-4' type="submit">
+                                    <Col md={12}>
+                                    <button className='submit_btn mt-4' type="submit">
                                             Submit
                                         </button>
                                     </Col>
+
                                 </Row>
                             </Form>
                         </div>
