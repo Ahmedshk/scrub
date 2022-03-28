@@ -9,7 +9,7 @@
     margin-bottom: 40px;
   }
 
-  .freeShip, .freeShip_inspired{
+  .freeShip{
     box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
     background-color: #fff;
     height: 300px;
@@ -36,7 +36,13 @@
 
   }
   .freeShip_inspired{
-    background-color: $bgColor !important;
-    color: #fff
+    background-color: $bgColor;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

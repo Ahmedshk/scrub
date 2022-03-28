@@ -6,14 +6,14 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import {customerRoutes, RoutesLink } from "./Container/Customer/Navbar/routes";
 import CustomerNavbar from "./Container/Customer/Navbar/Navbar";
 
-import Home from "./Container/Home/Home";
-import About from "./Container/About/About";
-import Policy from "./Container/Policy/Policy";
-import TermsCondition from "./Container/TermsCondition/TermsCondition";
-import Career from "./Container/Career/Career"
-import Contact from "./Container/ContactUs/ContactUs"
-import Testimonials from "./Container/Testimonials/Testimonials";
-import Order from "./Container/Order/Order"
+import Home from "./Container/Pages/Home/Home";
+import About from "./Container/Pages/About/About";
+import Policy from "./Container/Pages/Policy/Policy";
+import TermsCondition from "./Container/Pages/TermsCondition/TermsCondition";
+import Career from "./Container/Pages/Career/Career"
+import Contact from "./Container/Pages/ContactUs/Contact"
+import Testimonials from "./Container/Pages/Testimonials/Testimonials";
+import Order from "./Container/Pages/Orders/Order"
 import './App.scss';
 
 const App = () => {

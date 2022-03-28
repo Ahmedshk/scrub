@@ -1,6 +1,6 @@
 import React from 'react'
 import './Brand.scss';
-import { Container, Col, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 // @ts-ignore
 import Slider from 'react-slick';
 import SliderLogo1 from '../../assets/img/slider-logo1.png'
@@ -106,15 +106,14 @@ const Brand = () => {
                 }
             }
         ]
-
-    };
+    }
 
     return (
         <Container className='shopByBrand_container'>
             <div className='w-100 text-center shop_brand'>
-                            <h3 className="shop_by_brand_head">SHOP BY BRAND</h3>
-                            <p className="shop_by_brand_text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
+                <h3 className="shop_by_brand_head">SHOP BY BRAND</h3>
+                <p className="shop_by_brand_text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
             <Slider {...settings} >
                 {
                     shopByBrand.map((data) => {
@@ -130,5 +129,4 @@ const Brand = () => {
         </Container>
     )
 }
-
-export default Brand
+export default Brand;

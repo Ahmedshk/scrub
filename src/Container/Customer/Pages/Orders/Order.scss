@@ -1,0 +1,47 @@
+.table_container {
+  margin-top: 30px;
+
+  .head_container{
+    border: 2px solid grey;
+    width: 210px;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+
+  .table{
+    width: 100%;
+    height: auto;
+  }
+
+  .submit_btn {
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 70px;
+    height: 27px;
+    font-size: 12px;
+    border: none;
+    background-color: #003f67;
+    color: white;
+    font-family: Montserrat, serif;
+  }
+
+  .order_return_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+
+    button{
+      font-weight: bold;
+      letter-spacing: 1px;
+      width: 150px;
+      height: 35px;
+      font-size: 14px;
+      border: none;
+      background-color: #003f67;
+      color: white;
+      font-family: Montserrat, serif;
+    }
+
+  }
+}

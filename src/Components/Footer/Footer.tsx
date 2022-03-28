@@ -1,12 +1,9 @@
- import React from 'react';
- import {Button, Container} from "react-bootstrap";
+import React from 'react';
+import {Button} from "react-bootstrap";
 import {FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram} from "react-icons/fa";
-// @ts-ignore
- import VisaImg from "../../assets/img/visa_img.png";
- // @ts-ignore
- import MasterImg from "../../assets/img/master_img.png";
- // @ts-ignore
- import WesternImg from "../../assets/img/western_union.png";
+import VisaImg from "../../assets/img/visa_img.png";
+import MasterImg from "../../assets/img/master_img.png";
+import WesternImg from "../../assets/img/western_union.png";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -42,7 +39,6 @@ const Footer = () => {
 
             <div className={'footer_links'}>
                 <h2>FOLLOW US</h2>
-
                 <div className={'social_icons'}>
                     <FaFacebookF />
                     <FaTwitter />
@@ -53,18 +49,13 @@ const Footer = () => {
             <div className={'hr_tag'} />
         </div>
         <div className={'all_rights'}>
-            <Container>
-                <p>© 2021 Hands of Hope. All Rights Reserved.</p>
-
-                <div className={'payment_method'}>
-                    <p>Payment method</p>
-                    <img src={VisaImg} alt={'visa'} />
-                    <img src={MasterImg} alt={'visa'} />
-                    <img src={WesternImg} alt={'visa'} />
-                </div>
-            </Container>
-
-
+            <p>© 2021 Hands of Hope. All Rights Reserved.</p>
+            <div className={'payment_method'}>
+                <p>Payment method</p>
+                <img src={VisaImg} alt={'visa'} />
+                <img src={MasterImg} alt={'visa'} />
+                <img src={WesternImg} alt={'visa'} />
+            </div>
         </div>
         </React.Fragment>
     );

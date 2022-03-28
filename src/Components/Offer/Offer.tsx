@@ -1,6 +1,5 @@
 import React from 'react';
 import {Button, Col, Container, Row} from "react-bootstrap";
-// @ts-ignore
 import offer from "../../assets/img/offer_gift.png";
 import "./Offer.scss";
 
@@ -39,5 +38,4 @@ const Offer = () => {
         </div>
     );
 };
-
 export default Offer;

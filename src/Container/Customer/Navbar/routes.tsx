@@ -1,13 +1,12 @@
 import * as AiIcons from "react-icons/ai";
 import * as MdIcons from "react-icons/md";
-import * as BiIcons from "react-icons/bi"
 import * as RiIcons from "react-icons/ri"
-import * as FcIcons from "react-icons/fc"
-import * as FiIcons from "react-icons/fi"
 
 import Profile from "../Pages/Profile/Profile";
 import Orders from "../Pages/Orders/Orders";
 import Support from "../Pages/Support/Support";
+import UploadPhoto from "../Pages/UploadPhoto/UploadPhoto";
+import Rewards from "../Pages/Rewards/Rewards";
 
 export interface RoutesLink {
     component: JSX.Element,
@@ -22,7 +21,7 @@ export interface SideBarCustomerRoutes {
 
 export const customerRoutes: RoutesLink[] = [
     {
-        path: '/customer/dashboard',
+        path: '/customer/profile',
         component: <Profile/>,
     },
     {
@@ -30,25 +29,43 @@ export const customerRoutes: RoutesLink[] = [
         component: <Orders/>,
     },
     {
-        path: '/customer/support',
+        path: '/customer/contact-support',
         component: <Support/>,
+    },
+    {
+        path: '/customer/upload-photo',
+        component: <UploadPhoto/>,
+    },
+    {
+        path: '/customer/rewards',
+        component: <Rewards/>,
     },
 ]
 
 export const customerSideBarItems: SideBarCustomerRoutes[] = [
     {
-        path: '/customer/dashboard',
+        path: '/customer/profile',
         icon: <AiIcons.AiFillDashboard/>,
-        title: 'Dashboard',
+        title: 'Profile',
     },
     {
         path: '/customer/orders',
         icon: <RiIcons.RiProductHuntFill/>,
-        title: 'Product',
+        title: 'Orders',
     },
     {
-        path: '/customer/support',
+        path: '/customer/contact-support',
         icon: <MdIcons.MdOutlineCategory/>,
-        title: 'Category',
-    }
+        title: 'Contact Support',
+    },
+    {
+        path: '/customer/upload-photo',
+        icon: <MdIcons.MdOutlineCategory/>,
+        title: 'Upload Photo',
+    },
+    {
+        path: '/customer/rewards',
+        icon: <MdIcons.MdOutlineCategory/>,
+        title: 'Reward and Gift',
+    },
 ]
