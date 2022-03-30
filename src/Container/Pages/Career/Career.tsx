@@ -1,14 +1,29 @@
-import React from 'react';
-import { Container, Row, Col, Form} from 'react-bootstrap'
+import React, {useState} from 'react';
+import { Container, Row, Col, Form, Spinner} from 'react-bootstrap'
 import "./Career.scss";
-import TextField from '@mui/material/TextField';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DatePicker from '@mui/lab/DatePicker';
 import Banner from "../../../Components/Banner/Banner";
+import { useForm } from "react-hook-form";
+import inputValidation from '../../../Components/Validation/Validation';
+
+type JobApplication = {
+    firstname: string,
+    lastname: string,
+    email: string,
+    phone: number,
+    applied: string,
+    date: number
+}
 
 const Career = () => {
-    const [value, setValue] = React.useState(null);
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<JobApplication>();
+    const [isLoading, setIsLoading] = useState(false)
+
+    const onSubmit = (data: JobApplication) => {
+        setIsLoading(true)
+        console.log("data", data);
+        reset()
+    };
+
     return (
         <React.Fragment>
             <Banner heading={'CAREERS'} cssClass={'about_main'} />
@@ -25,53 +40,52 @@ const Career = () => {
                     </Col>
                     <Col className='mt-3 border-box' md={6}>
                         <div className='form_container'>
-                            <Form>
+                            <Form onSubmit={handleSubmit(onSubmit)}>
                                 <h4>Job Application</h4>
                                 <Row>
                                     <Col md={6}>
                                         <Form.Group className="mb-3">
                                             <label className='label_text'>Name</label>
-                                            <Form.Control type="text" placeholder="First name" />
+                                            <Form.Control type="text" placeholder="First name" {...register('firstname', inputValidation.firstname)} />
+                                            <small className="text-danger"> {errors.firstname && errors.firstname.message} </small>
                                         </Form.Group>
                                     </Col>
                                     <Col md={6}>
                                         <Form.Group className="mb-3">
                                             <label className='label_text'>Last Name</label>
-                                            <Form.Control type="text" placeholder="Last name" />
+                                            <Form.Control type="text" placeholder="Last name" {...register('lastname', inputValidation.lastname)} />
+                                            <small className="text-danger"> {errors.lastname && errors.lastname.message} </small>
                                         </Form.Group>
                                     </Col>
                                     <Col md={6}>
                                         <Form.Group className="mb-3">
                                             <label className='label_text'>Email</label>
-                                            <Form.Control type="email" placeholder="Enter email address" />
+                                            <Form.Control type="email" placeholder="Enter email address" {...register('email', inputValidation.email)} />
+                                            <small className="text-danger"> {errors.email && errors.email.message} </small>
                                         </Form.Group>
                                     </Col>
                                     <Col md={6}>
                                         <Form.Group className="mb-3">
                                             <label className='label_text'>Phone</label>
-                                            <Form.Control type="text" placeholder="Enter phone number" />
+                                            <Form.Control type="text" placeholder="Enter phone number" {...register('phone', inputValidation.phone)} />
+                                            <small className="text-danger"> {errors.phone && errors.phone.message} </small>
                                         </Form.Group>
                                     </Col>
-                                    <Col md={12}>
+                                    <Col md={12} className="mb-3">
                                         <label className='label_text'>What position are you applying for?</label>
                                         <Form.Select>
-                                            <option>Please select</option>
+                                            <option hidden value={""}>Please Select</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
                                         </Form.Select>
                                     </Col>
                                     <Col md={12}>
-                                        <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                            <DatePicker
-                                                value={value}
-                                                label="Available start date"
-                                                onChange={(newValue) => {
-                                                    setValue(newValue);
-                                                }}
-                                                renderInput={(params) => <TextField {...params} />}
-                                            />
-                                        </LocalizationProvider>
+                                        <Form.Group className="mb-3">
+                                            <label className='label_text'>Available start date</label>
+                                            <Form.Control {...register('date', inputValidation.date)} type="date" />
+                                            <small className="text-danger"> {errors.date && errors.date.message} </small>
+                                        </Form.Group>
                                     </Col>
                                     <Col md={12}>
                                         <Form.Group className="mb-3">
@@ -79,11 +93,9 @@ const Career = () => {
                                             <Form.Control type="file" />
                                         </Form.Group>
                                     </Col>
-
                                     <Col md={12}>
-                                    <button className='submit_btn mt-4' type="submit">
-                                            Submit
-                                        </button>
+                                        {isLoading ? <Spinner animation={'border'} /> : <button className='submit_btn mt-4' type="submit"> Submit </button> }
+
                                     </Col>
                                 </Row>
                             </Form>

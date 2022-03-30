@@ -8,5 +8,4 @@ const Banner = (props: {heading: string, cssClass: string}) => {
         </div>
     );
 };
-
 export default Banner;

@@ -1,5 +1,6 @@
-import React from 'react';
-import { Container, Col, Row, Form } from 'react-bootstrap';
+import React, {useState} from 'react';
+import { useForm } from "react-hook-form";
+import { Container, Col, Row, Form, Spinner } from 'react-bootstrap';
 import Fab from '@mui/material/Fab';
 import HomeIcon from '@mui/icons-material/Home';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -9,9 +10,26 @@ import Brand from "../../../Components/Brand/Brand";
 import Offer from "../../../Components/Offer/Offer";
 import Testimonial from "../../../Components/Testimonial/Testimonial";
 import ContactImage from '../../../assets/img/contact-us-image.png';
+import inputValidation from '../../../Components/Validation/Validation';
 import "./Contact.scss";
 
+type ContactInterface = {
+    name: string,
+    email: string,
+    textMessage: string
+}
+
 const Contact = () => {
+
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactInterface>();
+    const [isLoading, setIsLoading] = useState(false)
+
+    const onSubmitHandler = (data: ContactInterface) => {
+        setIsLoading(true)
+        console.log('success')
+        reset()
+    };
+
     return (
         <React.Fragment>
             <Banner heading={'CONTACT US'} cssClass={'about_main'} />
@@ -24,25 +42,28 @@ const Contact = () => {
                         </div>
                         <div className='form_container'>
                             <h6> Send Message </h6>
-                            <Form>
+                            <Form onSubmit={handleSubmit(onSubmitHandler)}>
                                 <Row>
                                     <Col md={6} className="mt-2">
                                         <Form.Group className="mb-3">
-                                            <Form.Control type="text" placeholder="Enter full name" />
+                                            <Form.Control type="text" placeholder="Enter full name" {...register('name', inputValidation.name)} />
+                                            <small className="text-danger"> {errors.name && errors.name.message} </small>
                                         </Form.Group>
                                     </Col>
                                     <Col md={6} className="mt-2">
                                         <Form.Group className="mb-3">
-                                            <Form.Control type="text" placeholder="Enter email address" />
+                                            <Form.Control type="text" placeholder="Enter email address" {...register('email', inputValidation.email)} />
+                                            <small className="text-danger"> {errors.email && errors.email.message} </small>
                                         </Form.Group>
                                     </Col>
                                     <Col md={12}>
                                         <Form.Group className="mb-3">
-                                            <Form.Control as="textarea" rows={3} placeholder="Message" />
+                                            <Form.Control as="textarea" rows={3} placeholder="Message" {...register('textMessage', inputValidation.textMessage)} />
+                                            <small className="text-danger"> {errors.textMessage && errors.textMessage.message} </small>
                                         </Form.Group>
                                     </Col>
-                                    <Col md={12}>
-                                        <button type="submit"> Submit </button>
+                                    <Col md={12} className={'text-center'}>
+                                        { isLoading ? <Spinner animation="border" /> : <button type="submit"> Submit </button> }
                                     </Col>
                                 </Row>
                             </Form>

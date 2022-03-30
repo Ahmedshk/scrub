@@ -1,9 +1,9 @@
 import React from 'react';
 import Profile from "../../../../Components/Profile/Profile";
 
-const CustomerProfile = () => {
+const AdminProfile = () => {
     return (
-       <Profile />
+        <Profile />
     );
 };
-export default CustomerProfile;
+export default AdminProfile;

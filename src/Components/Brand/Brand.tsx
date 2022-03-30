@@ -1,6 +1,6 @@
 import React from 'react'
 import './Brand.scss';
-import { Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap';
 // @ts-ignore
 import Slider from 'react-slick';
 import SliderLogo1 from '../../assets/img/slider-logo1.png'
@@ -12,66 +12,18 @@ import SliderLogo5 from '../../assets/img/slider-logo5.png'
 const Brand = () => {
 
     const shopByBrand = [
-        {
-            id: 1,
-            img: SliderLogo1
-
-        },
-        {
-            id: 2,
-            img: SliderLogo2
-
-        },
-        {
-            id: 3,
-            img: SliderLogo3
-
-        },
-        {
-            id: 4,
-            img: SliderLogo4
-
-        },
-        {
-            id: 5,
-            img: SliderLogo5
-
-        },
-        {
-            id: 6,
-            img: SliderLogo1
-
-        },
-        {
-            id: 7,
-            img: SliderLogo2
-
-        },
-        {
-            id: 8,
-            img: SliderLogo3
-
-        },
-        {
-            id: 9,
-            img: SliderLogo4
-
-        },
-        {
-            id: 10,
-            img: SliderLogo5
-
-        },
-        {
-            id: 11,
-            img: SliderLogo1
-
-        },
-        {
-            id: 12,
-            img: SliderLogo2
-
-        }
+        { id: 1, img: SliderLogo1 },
+        { id: 2, img: SliderLogo2 },
+        { id: 3, img: SliderLogo3 },
+        { id: 4, img: SliderLogo4 },
+        { id: 5, img: SliderLogo5 },
+        { id: 6, img: SliderLogo1 },
+        { id: 7, img: SliderLogo2 },
+        { id: 8, img: SliderLogo3 },
+        { id: 9, img: SliderLogo4 },
+        { id: 10, img: SliderLogo5 },
+        { id: 11, img: SliderLogo1 },
+        { id: 12, img: SliderLogo2 }
     ]
     const settings = {
         dots: true,
@@ -109,24 +61,26 @@ const Brand = () => {
     }
 
     return (
-        <Container className='shopByBrand_container'>
-            <div className='w-100 text-center shop_brand'>
-                <h3 className="shop_by_brand_head">SHOP BY BRAND</h3>
-                <p className="shop_by_brand_text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            <Slider {...settings} >
-                {
-                    shopByBrand.map((data) => {
-                        const { id, img } = data
-                        return (
-                            <div key={id}>
-                                <img src={img} width={100} alt={'img'} />
-                            </div>
-                        )
-                    })
-                }
-            </Slider>
-        </Container>
+        <div className='shop_by_brand'>
+            <Container>
+                <div className='shop_brand'>
+                    <h3> SHOP BY BRAND </h3>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                </div>
+                <Slider {...settings} >
+                    {
+                        shopByBrand.map((data) => {
+                            const { id, img } = data
+                            return (
+                                <div key={id}>
+                                    <img src={img} width={100} alt={'img'} />
+                                </div>
+                            )
+                        })
+                    }
+                </Slider>
+            </Container>
+        </div>
     )
 }
 export default Brand;

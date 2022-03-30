@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Nav, Navbar} from "react-bootstrap";
-import {Link, NavLink} from "react-router-dom"
+import {Link} from "react-router-dom"
 import { BiSearch } from 'react-icons/bi';
 import {HiOutlineShoppingBag} from "react-icons/hi";
 import "./Header.scss";
@@ -29,7 +29,7 @@ const Header = () => {
             </div>
             <Container>
                 <div className={'logo_section'}>
-                    <h2><NavLink to='/'> LOGO </NavLink></h2>
+                    <h2><Link to='/'> LOGO </Link></h2>
                     <div className={'icon_section'}>
                         <BiSearch />
                         <HiOutlineShoppingBag />

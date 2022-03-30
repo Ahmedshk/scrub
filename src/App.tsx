@@ -6,6 +6,9 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import {customerRoutes, RoutesLink } from "./Container/Customer/Navbar/routes";
 import CustomerNavbar from "./Container/Customer/Navbar/Navbar";
 
+import {adminRoutes } from "./Container/Admin/Navbar/routes";
+import AdminNavBar from "./Container/Admin/Navbar/Navbar";
+
 import Home from "./Container/Pages/Home/Home";
 import About from "./Container/Pages/About/About";
 import Policy from "./Container/Pages/Policy/Policy";
@@ -27,12 +30,23 @@ const App = () => {
             } />
         ))
     )
+    const adminLayout = (
+        adminRoutes.map((item: RoutesLink, index) => (
+            <Route key={index} path={item.path} element={
+                <React.Fragment>
+                    <AdminNavBar />
+                    { item.component }
+                </React.Fragment>
+            } />
+        ))
+    )
 
     return (
         <React.Fragment>
             <Router>
                 <Routes>
                     {customerLayout}
+                    {adminLayout}
                     <Route path={'/'}  element={
                         <React.Fragment>
                             <Header />

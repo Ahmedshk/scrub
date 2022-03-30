@@ -9,9 +9,9 @@ import "./Footer.scss";
 const Footer = () => {
     return (
         <React.Fragment>
-        <div className={'footer'}>
+            <div className={'footer'}>
             <h1>INBOX ME!</h1>
-            <p className={'text-center'}>Sign up to our newsletter and we’’ll keep you up to date with the latest arrivals</p>
+            <p> Sign up to our newsletter and we’’ll keep you up to date with the latest arrivals </p>
 
             <div className={'footer_form'}>
                 <form>
@@ -23,8 +23,8 @@ const Footer = () => {
 
             <div className={'footer_logo'}>
                 <h2>LOGO</h2>
-                <p className={'text-center'}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum <br /> is simply dummy text of the printing and typesetting industry.</p>
+                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum <br /> is simply dummy text of the printing and typesetting industry. </p>
                 <ul>
                     <li onClick={() => window.location.href='/order'}>ORDER STATUS</li>
                     <li onClick={() => window.location.href='/about'}> ABOUT US </li>
@@ -39,16 +39,11 @@ const Footer = () => {
 
             <div className={'footer_links'}>
                 <h2>FOLLOW US</h2>
-                <div className={'social_icons'}>
-                    <FaFacebookF />
-                    <FaTwitter />
-                    <FaLinkedinIn />
-                    <FaInstagram />
-                </div>
+                <div className={'social_icons'}> <FaFacebookF /> <FaTwitter /> <FaLinkedinIn /> <FaInstagram /> </div>
             </div>
             <div className={'hr_tag'} />
         </div>
-        <div className={'all_rights'}>
+            <div className={'all_rights'}>
             <p>© 2021 Hands of Hope. All Rights Reserved.</p>
             <div className={'payment_method'}>
                 <p>Payment method</p>

@@ -86,7 +86,7 @@ const Testimonial = () => {
                         {
                             testimonialsData.map((testimonial) => {
                                 return(
-                                    <div key={testimonial.id} className='d-flex Round_container'>
+                                    <div key={testimonial.id} className='d-flex round_container'>
                                         <div className='Round_image'>
                                             <img className='circle_image' alt='img' src={testimonial.img} width={200} height={200} />
                                         </div>

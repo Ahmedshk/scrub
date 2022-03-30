@@ -1,4 +1,4 @@
-.about_main, .policy_bg{
+.about_main{
   background: url('../../assets/img/about.png');
   width: 100%;
   background-size: cover;
@@ -15,4 +15,7 @@
 
 .policy_bg{
   background: url('../../assets/img/policy_bg.png') !important;
+  width: 100%;
+  background-size: cover;
+  height: 300px;
 }
