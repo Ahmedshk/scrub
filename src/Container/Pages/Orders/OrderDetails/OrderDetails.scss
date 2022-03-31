@@ -5,8 +5,24 @@
   .image_background_color {
     background-color: rgb(230, 230, 230);
     width: 100px;
-    .card_image {
+
+    img {
       padding: 10px 10px;
+    }
+
+  }
+
+  .card_details{
+    span{
+        color: grey;
+        font-size: 13px;
+        font-family: Montserrat, serif;
+    }
+    b {
+      font-weight: bolder !important;
+      font-size: 13px;
+      margin: 0 5px;
+      font-family: Montserrat, serif;
     }
   }
 
@@ -14,72 +30,32 @@
     display: flex;
     justify-content: space-between;
 
-    .dress_price {
-      color: grey;
-      font-size: 12px;
-      font-family: Montserrat;
-    }
 
-    .card_head {
-      font-family: Montserrat;
+    p {
+      font-weight: 600;
+      font-family: Montserrat, serif;
     }
 
     .dollar_sign {
-      font-family: Montserrat;
+      font-family: Montserrat, serif;
       font-weight: bold;
       font-size: 12px;
     }
   }
 
-  .your_order_head {
+  h4 {
     font-size: 24px;
     font-family: serif;
     font-weight: bold;
   }
 }
 
-.color_sizing {
-  color: grey;
-  font-size: 13px;
-  font-family: Montserrat;
-}
-
-.color_sizing_value {
-  font-weight: bolder !important;
-  font-size: 13px;
-  font-family: Montserrat;
-}
-
 .delivery_container {
   display: flex;
   justify-content: space-between;
-  .delivery_text {
-    font-family: sans-serif;
+
+  p {
     font-weight: bold;
-  }
-  .delivery_price {
-    font-size: 12px;
-    color: grey !important;
   }
 
-  .dollar_sign {
-    font-family: Montserrat;
-    font-weight: bold;
-    font-size: 12px;
-  }
-}
-
-.total_container {
-  display: flex;
-  justify-content: space-between;
-
-  .total_text {
-    font-family: sans-serif;
-    font-weight: bold;
-  }
-  .total_price {
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-  }
 }

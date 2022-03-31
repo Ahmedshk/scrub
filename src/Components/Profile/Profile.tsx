@@ -1,13 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Container, Row, Col, Form} from "react-bootstrap";
 import {FiUpload} from "react-icons/fi";
 import Card5 from "../../assets/img/card5.jpg";
+import Select from 'react-select';
 import "./Profile.scss";
 
-const Profile = () => {
+const Profile: React.FC<any> = ({role, heading}) => {
+    const [roleOptions, setRoleOptions] = useState<any>([]);
+
+    useEffect(() => {
+        setRoleOptions([
+            { value: 'C One', label: 'C One' },
+            { value: 'C Two', label: 'C Two' },
+            { value: 'C Three', label: 'C Three' }
+        ])
+    }, [])
     return (
         <div className={'page_responsive'}>
-            <h3>Edit Profile</h3>
+            <h3>{heading}</h3>
             <Container>
                 <Row className={'profile_section'}>
                     <Col md={9} className={'profile_img mb-2'}>
@@ -46,6 +56,19 @@ const Profile = () => {
                             <Form.Control type="text" placeholder="Enter your Address" />
                         </Form.Group>
                     </Col>
+                    {
+                        role ? <Col md={9}>
+                            <Select
+                                defaultValue={''}
+                                name="category"
+                                options={roleOptions}
+                                className="basic-multi-select mb-3"
+                                classNamePrefix="select"
+                                placeholder="Select Role"
+                            />
+                        </Col> : null
+                    }
+
                     <Col md={9}>
                         <button className='submit_btn mt-4' type="submit">
                             Saves Changes

@@ -6,9 +6,9 @@ import gridImage from "../../../assets/img/grid-image1.jpg";
 import gridImage2 from "../../../assets/img/grid-image2.jpg";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Brand from "../../../Components/Brand/Brand";
-import UploadPhoto from "../../../Components/UploadPhoto/UploadPhoto";
+import UploadPhoto from "./UploadPhoto/UploadPhoto";
 import Offer from "../../../Components/Offer/Offer";
-import Testimonial from "../../../Components/Testimonial/Testimonial";
+import SliderTestimonial from "../../../Components/SliderTestimonial/SliderTestimonial";
 import "./Home.scss";
 
 const Home = () => {
@@ -18,9 +18,7 @@ const Home = () => {
             <div className='cover_section_container'>
                 <img src={CoverImage} className="img-fluid" alt={'cover_img'} />
             </div>
-            
             <Products />
-
             <div className='group_container'>
                 <Container>
                     <Row>
@@ -64,8 +62,7 @@ const Home = () => {
             <Brand />
             <UploadPhoto />
             <Offer />
-            <Testimonial />
-
+            <SliderTestimonial />
         </React.Fragment>
     );
 };

@@ -3,7 +3,7 @@ import { Container, Col, Row } from 'react-bootstrap'
 import CartDetails from './CartDetails/CartDetails';
 import OrderDetails from "./OrderDetails/OrderDetails";
 import Offer from "../../../Components/Offer/Offer";
-import Testimonial from "../../../Components/Testimonial/Testimonial";
+import SliderTestimonial from "../../../Components/SliderTestimonial/SliderTestimonial";
 import "./Order.scss";
 
 const Order = () => {
@@ -22,7 +22,7 @@ const Order = () => {
             </Container>
 
             <Offer />
-            <Testimonial />
+            <SliderTestimonial />
         </div>
     );
 };

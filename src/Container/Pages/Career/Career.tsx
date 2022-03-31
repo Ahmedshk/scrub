@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Spinner} from 'react-bootstrap'
 import "./Career.scss";
 import Banner from "../../../Components/Banner/Banner";
 import { useForm } from "react-hook-form";
-import inputValidation from '../../../Components/Validation/Validation';
+import inputValidation from '../../../lib/Validation/Validation';
 
 type JobApplication = {
     firstname: string,

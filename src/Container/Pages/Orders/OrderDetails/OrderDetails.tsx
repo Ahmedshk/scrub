@@ -9,7 +9,8 @@ const OrderDetails = () => {
     const cardData = [
         {
             id: 1,
-            card_image: shirt3,
+            name: 'WOMEN\'S SCRUB TOP',
+            img: shirt3,
             price: "45.99",
             color: "Gray",
             size: "XL",
@@ -18,7 +19,8 @@ const OrderDetails = () => {
 
         {
             id: 2,
-            card_image: shirt2,
+            name: 'WOMEN\'S SCRUB TOP',
+            img: shirt2,
             price: "50.99",
             size: "XL",
             color: "Sky Blue",
@@ -26,7 +28,8 @@ const OrderDetails = () => {
         },
         {
             id: 3,
-            card_image: shirt,
+            name: 'WOMEN\'S SCRUB TOP',
+            img: shirt,
             color: "Navy",
             price: "70.99",
             size: "XL",
@@ -34,56 +37,36 @@ const OrderDetails = () => {
         }
     ]
     return (
-        <div className='order_cards_container mx-4'>
-
-            <h4 className="your_order_head">YOUR ORDER</h4>
+        <div className='order_cards_container'>
+            <h4> YOUR ORDER </h4>
 
             {cardData.map((data) => {
-                const { id, card_image, color, size, Qty, price } = data
                 return (
                     <React.Fragment>
-                        <Row className="mt-4" key={id}>
+                        <Row className="mt-4" key={data.id}>
                             <Col md={3}>
                                 <div className="image_background_color">
-                                    <img className='card_image' width={100} height={100} src={card_image} alt={'img'}/>
+                                    <img width={100} height={100} src={data.img} alt={'img'}/>
                                 </div>
                             </Col>
-
                             <Col md={9}>
                                 <div className="card_inner_text">
-                                    <b className='card_head'>WOMEN'S SCRUB TOP</b>
+                                    <p>{data.name}</p>
+                                   <small className="text-muted"><span className="dollar_sign">$</span> {data.price}</small>
+                                </div>
+                                <div className="card_details">
                                     <div>
-                                        <small className="dress_price"><span className="dollar_sign">$</span> {price}</small>
+                                        <span> Size : </span>
+                                        <b> {data.size} </b>
                                     </div>
-                                </div>
-
-                                <div className="mt-2">
-                                        <span className='color_sizing'>
-                                            Size
-                                        </span>
-
-                                    <b className="mx-2 color_sizing_value">
-                                        {size}
-                                    </b>
-                                </div>
-
-                                <div>
-                                        <span className="color_sizing">
-                                            Color
-                                        </span>
-
-                                    <b className="mx-2 color_sizing_value">
-                                        {color}
-                                    </b>
-                                </div>
-                                <div>
-                                        <span className="color_sizing ">
-                                            Qty
-                                        </span>
-
-                                    <b className="mx-2 color_sizing_value">
-                                        {Qty}
-                                    </b>
+                                    <div>
+                                        <span> Color: </span>
+                                        <b> {data.color} </b>
+                                    </div>
+                                    <div>
+                                        <span> Qty: </span>
+                                        <b> {data.Qty} </b>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>
@@ -91,28 +74,16 @@ const OrderDetails = () => {
                     </React.Fragment>
                 )
             })}
-
             <div className="delivery_container">
-                <div className='mt-1'>
-                    <strong className='delivery_text'>DELIVERY</strong>
-                </div>
-                <div>
-                    <b className='dollar_sign'>$</b>
-                    <span className='delivery_price'>05.99</span>
-                </div>
+                <strong> DELIVERY </strong>
+                <div> <p> $ 50.99</p> </div>
             </div>
             <hr />
-            <div className="total_container mt-2">
-                <div className='mt-1'>
-                    <strong className='total_text'>TOTAL</strong>
-                </div>
-                <div>
-                    <b className='total_price'>$145.99</b>
-                </div>
+            <div className="delivery_container">
+                <strong> TOTAL </strong>
+                <div> <p> $ 145.99</p> </div>
             </div>
         </div>
-
     );
 };
-
 export default OrderDetails;

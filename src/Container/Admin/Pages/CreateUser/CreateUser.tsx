@@ -1,9 +1,9 @@
 import React from 'react';
 import Profile from "../../../../Components/Profile/Profile";
 
-const AdminProfile = () => {
+const CreateUser = () => {
     return (
-        <Profile heading={'Edit Profile'} />
+        <Profile heading={'Create User'} role={true} />
     );
 };
-export default AdminProfile;
+export default CreateUser;

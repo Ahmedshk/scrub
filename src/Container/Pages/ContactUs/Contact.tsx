@@ -8,9 +8,9 @@ import EmailIcon from '@mui/icons-material/Email';
 import Banner from "../../../Components/Banner/Banner";
 import Brand from "../../../Components/Brand/Brand";
 import Offer from "../../../Components/Offer/Offer";
-import Testimonial from "../../../Components/Testimonial/Testimonial";
+import SliderTestimonial from "../../../Components/SliderTestimonial/SliderTestimonial";
 import ContactImage from '../../../assets/img/contact-us-image.png';
-import inputValidation from '../../../Components/Validation/Validation';
+import inputValidation from '../../../lib/Validation/Validation';
 import "./Contact.scss";
 
 type ContactInterface = {
@@ -93,7 +93,7 @@ const Contact = () => {
             </Container>
             <Brand />
             <Offer />
-            <Testimonial />
+            <SliderTestimonial />
         </React.Fragment>
     );
 };

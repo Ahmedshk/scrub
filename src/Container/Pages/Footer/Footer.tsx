@@ -1,9 +1,9 @@
 import React from 'react';
 import {Button} from "react-bootstrap";
 import {FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram} from "react-icons/fa";
-import VisaImg from "../../assets/img/visa_img.png";
-import MasterImg from "../../assets/img/master_img.png";
-import WesternImg from "../../assets/img/western_union.png";
+import VisaImg from "../../../assets/img/visa_img.png";
+import MasterImg from "../../../assets/img/master_img.png";
+import WesternImg from "../../../assets/img/western_union.png";
 import "./Footer.scss";
 
 const Footer = () => {

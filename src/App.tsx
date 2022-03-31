@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
+import Header from "./Container/Pages/Header/Header";
+import Footer from "./Container/Pages/Footer/Footer";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import {customerRoutes, RoutesLink } from "./Container/Customer/Navbar/routes";
@@ -16,7 +16,12 @@ import TermsCondition from "./Container/Pages/TermsCondition/TermsCondition";
 import Career from "./Container/Pages/Career/Career"
 import Contact from "./Container/Pages/ContactUs/Contact"
 import Testimonials from "./Container/Pages/Testimonials/Testimonials";
-import Order from "./Container/Pages/Orders/Order"
+import Order from "./Container/Pages/Orders/Order";
+import Register from "./Container/Auth/Register/Register";
+import Login from "./Container/Auth/Login/Login";
+import ForgetPassword from "./Container/Auth/ForgetPassword/ForgetPassword";
+import ResetPassword from "./Container/Auth/ResetPassword/ResetPassword";
+
 import './App.scss';
 
 const App = () => {
@@ -103,6 +108,13 @@ const App = () => {
                             <Footer />
                         </React.Fragment>
                     } />
+
+                    <Route path={'/register'} element={<Register />} />
+                    <Route path={'/login'} element={<Login />} />
+                    <Route path={'/admin/register'} element={<Register />} />
+                    <Route path={'/login'} element={<Login />} />
+                    <Route path={'/forget-password'} element={<ForgetPassword />} />
+                    <Route path={'/reset-password'} element={<ResetPassword />} />
                 </Routes>
 
             </Router>

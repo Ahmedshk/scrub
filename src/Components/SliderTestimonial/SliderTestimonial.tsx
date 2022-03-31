@@ -4,9 +4,9 @@ import { Container, Row, Col} from 'react-bootstrap';
 import Slider from 'react-slick';
 import testimonialImage1 from '../../assets/img/testimonial1.jpg';
 import {ImQuotesLeft} from "react-icons/im";
-import "./Testimonial.scss"
+import "./SliderTestimonial.scss"
 
-const Testimonial = () => {
+const SliderTestimonial = () => {
 
     const settings = {
         dots: true,
@@ -108,4 +108,4 @@ const Testimonial = () => {
         </Container>
     );
 };
-export default Testimonial;
+export default SliderTestimonial

@@ -10,7 +10,6 @@ const Categories = () => {
         { value: 'women', label: 'women' },
         { value: 'child', label: 'child' }
     ]
-
     const countries = ['Canada', 'US', 'Chicago', 'Las Vegas']
 
     return (

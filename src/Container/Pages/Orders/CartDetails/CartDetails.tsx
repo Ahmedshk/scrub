@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import {Container, Row, Col, Form, Spinner} from 'react-bootstrap'
-import {FaHome} from 'react-icons/fa';
 import { FiEdit } from 'react-icons/fi'
 import { useForm } from "react-hook-form";
-import inputValidation from '../../../../Components/Validation/Validation';
+import inputValidation from '../../../../lib/Validation/Validation';
 import "./CartDetails.scss";
 
 type ShippingDetails = {
@@ -47,7 +46,6 @@ const CartDetails = () => {
                             <Col md={12} className="mt-2">
                                 <Form.Group className="mb-3">
                                     <label className='order_form_label'>Address</label>
-                                    <span className='home_icon'><FaHome /></span>
                                     <Form.Control type="text" placeholder="Enter your address" {...register('address', inputValidation.address)} />
                                     <small className="text-danger"> {errors.address && errors.address.message} </small>
                                 </Form.Group>
@@ -78,7 +76,6 @@ const CartDetails = () => {
                             <Col md={12}>
                                 <div className="border_btn_container">
                                     { isLoading ? <Spinner animation={'border'} /> : <button className='save_btn mx-2'>Save</button> }
-                                    {/*<button className='cancel_btn'>Cancel</button>*/}
                                 </div>
                             </Col>
                         </Row>

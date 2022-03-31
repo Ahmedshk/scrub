@@ -4,7 +4,7 @@ import docImg from "../../../assets/img/about_Section.png";
 import wearImg from "../../../assets/img/about3.png";
 import {BsCheckCircleFill} from "react-icons/bs"
 import Offer from "../../../Components/Offer/Offer";
-import Testimonial from "../../../Components/Testimonial/Testimonial";
+import SliderTestimonial from "../../../Components/SliderTestimonial/SliderTestimonial";
 import Banner from "../../../Components/Banner/Banner";
 import "./About.scss";
 
@@ -110,7 +110,7 @@ const About = () => {
                     </div>
                 </div>
                 <Offer />
-                <Testimonial />
+                <SliderTestimonial />
             </div>
         </React.Fragment>
     );

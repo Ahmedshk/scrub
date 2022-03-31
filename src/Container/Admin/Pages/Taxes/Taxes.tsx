@@ -20,7 +20,6 @@ const Taxes = () => {
             },
         }
     ]
-
     const data = [
         ["1", "Alabama", '2%'],
         ["2", "Alaska", '3%'],

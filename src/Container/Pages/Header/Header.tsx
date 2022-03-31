@@ -19,8 +19,8 @@ const Header = () => {
                                     <Nav.Link> <Link to={'/about'}> ABOUT US </Link> </Nav.Link>
                                     <Nav.Link> <Link to={'/contact'}> CONTACT US </Link></Nav.Link>
                                     <Nav.Link> <Link to={'/order'}> ORDER STATUS </Link></Nav.Link>
-                                    <Nav.Link> <Link to={'/'}> SIGN IN </Link></Nav.Link>
-                                    <Nav.Link> <Link to={'/'}> SIGN UP </Link></Nav.Link>
+                                    <Nav.Link> <Link to={'/login'}> SIGN IN </Link></Nav.Link>
+                                    <Nav.Link> <Link to={'/register'}> SIGN UP </Link></Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>

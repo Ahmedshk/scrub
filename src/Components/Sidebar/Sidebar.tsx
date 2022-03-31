@@ -41,6 +41,7 @@ const SideBar = (props: any) => {
                 </div>
                 <ul className="nav_list p-0">
                     {
+                        // eslint-disable-next-line array-callback-return
                         props.sideBarItems.map((item: SideBarRoutes , index: React.Key | null | undefined) =>{
                             if (item.path) {
                                 return  (
