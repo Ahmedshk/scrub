@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Container, Form, Spinner } from 'react-bootstrap';
 import './Register.scss';
 import { useForm } from "react-hook-form";
-import inputValidation from '../../../lib/Validation/Validation';
+import inputValidation from '../../../lib/Validation';
 
 type IRegister = {
     name: string,
@@ -11,15 +11,18 @@ type IRegister = {
     contactNo: number,
     address: string,
     password: string,
-    confirmPassword: string
+    confirmPassword: string,
 }
 
 const Register = () => {
-    const { register, handleSubmit, formState: { errors }, reset } = useForm<IRegister>();
+    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false)
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<IRegister>();
+
     const onSubmit = handleSubmit((data) => {
         setIsLoading(true)
-        console.log("data", data);
+        console.log(data)
+        navigate('/admin/profile')
         reset()
     })
 

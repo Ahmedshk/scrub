@@ -1,29 +1,48 @@
-import React from 'react';
-import {Form, Container, Row, Col, Button} from "react-bootstrap";
+import React, { useState } from 'react';
+import { Form, Container, Row, Col, Button, Spinner } from "react-bootstrap";
 import "./UploadPhoto.scss";
+import { useForm } from "react-hook-form";
+import inputValidation from '../../../../lib/Validation';
+
+type UploadPhotoInterface = {
+    image: File,
+}
 
 const UploadPhoto = () => {
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<UploadPhotoInterface>();
+    const [isLoading, setIsLoading] = useState(false)
+
+    const onSubmitHandler = handleSubmit((data) => {
+        setIsLoading(true)
+        console.log("data", data);
+        console.log('success')
+        reset()
+    })
     return (
         <div className={'page_responsive'}>
             <h3>Upload Photo on Scrub for Admin Approval</h3>
-
-            <Form>
-                <Container>
+            <Container>
+                <Form onSubmit={onSubmitHandler}>
                     <Row className={'customer_upload_photo'}>
                         <Col md={12}>
                             <Form.Group className="mb-3">
-                                <Form.Control type="file" />
+                                <Form.Control type="file"{...register('image', inputValidation.image)} />
+                                <small className="text-danger"> {errors.image && errors.image.message} </small>
                             </Form.Group>
                         </Col>
 
                         <Col md={12}>
-                            <Button type="submit">
-                                Submit
-                            </Button>
+                            <div className='text-center'>
+                                {isLoading ? <Spinner className='mt-3' animation={'border'} /> :
+                                    <Button type="submit">
+                                        Submit
+                                    </Button>
+                                }
+                            </div>
                         </Col>
                     </Row>
-                </Container>
-            </Form>
+                </Form>
+            </Container>
         </div>
     );
 };

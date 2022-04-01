@@ -1,8 +1,33 @@
 import React from 'react';
-import {Container, Row, Col, Form, Button} from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Select from 'react-select';
+import { useForm, Controller } from "react-hook-form"
+import {errorNotify} from "../../../../Utils/toast";
+import inputValidation from '../../../../lib/Validation';
+
+type AttributesInterface = {
+    attributeName: string,
+    parentAttribute: {
+        label: string,
+        value: string
+    }
+}
 
 const Attributes = () => {
+
+    const { register, handleSubmit, formState: { errors }, reset, control } = useForm<AttributesInterface>();
+
+    const onSubmitHandler = handleSubmit((data) => {
+        if (!data.parentAttribute) {
+            errorNotify("Please Select any Parent Attribute")
+        }
+        else {
+            console.log("data", data);
+            console.log('success')
+            reset()
+        }
+
+    })
 
     const AttributesOptions = [
         { value: 'mens', label: 'mens' },
@@ -20,25 +45,36 @@ const Attributes = () => {
                 <Row className={'category'}>
                     <Col md={6}>
                         <p> Add New Attributes </p>
-                        <Form>
+                        <Form onSubmit={onSubmitHandler}>
                             <Row>
                                 <Col md={8}>
                                     <Form.Group className="mb-3">
-                                        <label>Category Name</label>
-                                        <Form.Control type="text" />
+                                        <label>Attribute Name</label>
+                                        <Form.Control type="text" {...register('attributeName', inputValidation.attributeName)} />
+                                        <small className="text-danger"> {errors.attributeName && errors.attributeName.message} </small>
                                     </Form.Group>
                                 </Col>
                                 <Col md={8}>
-                                    <label>Parent Category</label>
-                                    <Select options={AttributesOptions} />
+                                    <label>Parent Attributes</label>
+                                    <Controller
+                                        name="parentAttribute"
+                                        control={control}
+                                        render={({ field }) => {
+                                            return (
+                                                <Select options={AttributesOptions}
+                                                        {...field}
+                                                />
+                                            );
+                                        }}
+                                    />
                                 </Col>
                                 <Col md={8}>
-                                    <Button>Add New Attributes</Button>
+                                    <Button type= "submit">Add New Attributes</Button>
                                 </Col>
                             </Row>
                         </Form>
                     </Col>
-                    <Col md={6}>
+                    <Col md={6} className="Bulk_actions">
                         <p> Bulk Actions </p>
                         {
                             countries.map((country) => (

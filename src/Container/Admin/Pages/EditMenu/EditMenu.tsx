@@ -1,10 +1,23 @@
-import React, {useState} from 'react';
-import {Button, Form} from "react-bootstrap";
+import React, { useState } from 'react';
+import { Button, Form } from "react-bootstrap";
 import MenuModal from "../../../../Components/Modal/Modal";
 import MuiDataTable from "../../../../Components/MuiDataTable/MuiDataTable";
+import { useForm } from "react-hook-form"
+import inputValidation from '../../../../lib/Validation';
 
-const CreateRole = () => {
+type EditMenuInterface = {
+    menuName: string,
+}
+
+const EditMenu = () => {
     const [show, setShow] = useState(false);
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<EditMenuInterface>();
+    const onSubmitHandler = handleSubmit((data) => {
+        console.log("data", data);
+        console.log('success')
+        reset()
+    })
+
     let columns = [
         'ID',
         'Role Name',
@@ -34,13 +47,14 @@ const CreateRole = () => {
 
     const modal = (
         <MenuModal size='md' modalTitle={"Edit Menu"} show={show} handleClose={() => setShow(false)}>
-            <Form>
+            <Form onSubmit={onSubmitHandler}>
                 <Form.Group className="mb-3">
                     <label>Menu Name</label>
-                    <Form.Control type="text"/>
+                    <Form.Control {...register('menuName', inputValidation.menuName)} type="text" />
+                    <small className="text-danger"> {errors.menuName && errors.menuName.message} </small>
                 </Form.Group>
                 <div className="text-center">
-                    <Button>Update</Button>
+                    <Button type= "submit">Update</Button>
                 </div>
             </Form>
         </MenuModal>
@@ -55,4 +69,4 @@ const CreateRole = () => {
         </div>
     );
 };
-export default CreateRole;
+export default EditMenu;

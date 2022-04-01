@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "./Container/Pages/Header/Header";
 import Footer from "./Container/Pages/Footer/Footer";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {Slide, ToastContainer} from "react-toastify";
 
 import {customerRoutes, RoutesLink } from "./Container/Customer/Navbar/routes";
 import CustomerNavbar from "./Container/Customer/Navbar/Navbar";
@@ -21,8 +22,12 @@ import Register from "./Container/Auth/Register/Register";
 import Login from "./Container/Auth/Login/Login";
 import ForgetPassword from "./Container/Auth/ForgetPassword/ForgetPassword";
 import ResetPassword from "./Container/Auth/ResetPassword/ResetPassword";
-
 import './App.scss';
+
+export enum USER_ROLE {
+    CUSTOMER = "customer",
+    ADMIN = "admin"
+}
 
 const App = () => {
     const customerLayout = (
@@ -48,6 +53,18 @@ const App = () => {
 
     return (
         <React.Fragment>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                transition={Slide}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             <Router>
                 <Routes>
                     {customerLayout}
@@ -111,12 +128,10 @@ const App = () => {
 
                     <Route path={'/register'} element={<Register />} />
                     <Route path={'/login'} element={<Login />} />
-                    <Route path={'/admin/register'} element={<Register />} />
-                    <Route path={'/login'} element={<Login />} />
+                    <Route path={'/admin/login'} element={<Login />} />
                     <Route path={'/forget-password'} element={<ForgetPassword />} />
                     <Route path={'/reset-password'} element={<ResetPassword />} />
                 </Routes>
-
             </Router>
         </React.Fragment>
     );

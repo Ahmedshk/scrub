@@ -1,28 +1,50 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Container, Row, Col, Form, Spinner} from 'react-bootstrap'
 import "./Career.scss";
 import Banner from "../../../Components/Banner/Banner";
-import { useForm } from "react-hook-form";
-import inputValidation from '../../../lib/Validation/Validation';
+import { useForm, Controller } from "react-hook-form";
+import {errorNotify} from "../../../Utils/toast";
+import inputValidation from '../../../lib/Validation';
+import Select from "react-select";
 
 type JobApplication = {
     firstname: string,
     lastname: string,
     email: string,
-    phone: number,
-    applied: string,
-    date: number
+    phone: string,
+    applied: {
+        label: string,
+        value: string
+    },
+    date: number,
+    image: File
 }
 
 const Career = () => {
-    const { register, handleSubmit, formState: { errors }, reset } = useForm<JobApplication>();
+    const { register, handleSubmit, formState: { errors }, reset, control } = useForm<JobApplication>();
     const [isLoading, setIsLoading] = useState(false)
+    const [applied, setApplied] = useState<any>([])
+
 
     const onSubmit = (data: JobApplication) => {
         setIsLoading(true)
-        console.log("data", data);
-        reset()
+        if(!data.applied) {
+            setIsLoading(false)
+            errorNotify('please select position')
+        }
+        else{
+            console.log("data", data);
+            setIsLoading(false)
+            reset()
+        }
     };
+    useEffect(() => {
+        setApplied([
+            { value: 'C One', label: 'C One' },
+            { value: 'C Two', label: 'C Two' },
+            { value: 'C Three', label: 'C Three' }
+        ])
+    }, [])
 
     return (
         <React.Fragment>
@@ -71,14 +93,23 @@ const Career = () => {
                                             <small className="text-danger"> {errors.phone && errors.phone.message} </small>
                                         </Form.Group>
                                     </Col>
-                                    <Col md={12} className="mb-3">
+                                    <Col md={12} className="mb-0">
                                         <label className='label_text'>What position are you applying for?</label>
-                                        <Form.Select>
-                                            <option hidden value={""}>Please Select</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </Form.Select>
+                                        <Controller
+                                            name="applied"
+                                            control={control}
+                                            render={({ field }) => {
+                                                return (
+                                                    <Select
+                                                        {...field}
+                                                        options={applied}
+                                                        className="basic-multi-select mb-3"
+                                                        classNamePrefix="select"
+                                                        placeholder="Select any Position"
+                                                    />
+                                                );
+                                            }}
+                                        />
                                     </Col>
                                     <Col md={12}>
                                         <Form.Group className="mb-3">
@@ -90,12 +121,16 @@ const Career = () => {
                                     <Col md={12}>
                                         <Form.Group className="mb-3">
                                             <label className='label_text'>Upload file</label>
-                                            <Form.Control type="file" />
+                                            <Form.Control type="file" {...register('image', inputValidation.image)} />
+                                            <small className="text-danger"> {errors.image && errors.image.message} </small>
                                         </Form.Group>
                                     </Col>
                                     <Col md={12}>
-                                        {isLoading ? <Spinner animation={'border'} /> : <button className='submit_btn mt-4' type="submit"> Submit </button> }
-
+                                        {isLoading ? (
+                                            <div className={'text-center'}>
+                                                <Spinner animation={'border'} />
+                                            </div>
+                                        )  : <button className='submit_btn mt-4' type="submit"> Submit </button> }
                                     </Col>
                                 </Row>
                             </Form>

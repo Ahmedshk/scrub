@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { Container, Form, Spinner } from 'react-bootstrap'
 import './ResetPassword.scss'
 import { useForm } from "react-hook-form";
-import inputValidation from '../../../lib/Validation/Validation';
+import inputValidation from '../../../lib/Validation';
 
 type IResetPass = {
     password: string,

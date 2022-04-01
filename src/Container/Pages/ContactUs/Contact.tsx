@@ -10,7 +10,7 @@ import Brand from "../../../Components/Brand/Brand";
 import Offer from "../../../Components/Offer/Offer";
 import SliderTestimonial from "../../../Components/SliderTestimonial/SliderTestimonial";
 import ContactImage from '../../../assets/img/contact-us-image.png';
-import inputValidation from '../../../lib/Validation/Validation';
+import inputValidation from '../../../lib/Validation';
 import "./Contact.scss";
 
 type ContactInterface = {

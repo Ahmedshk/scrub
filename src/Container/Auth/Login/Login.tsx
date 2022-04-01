@@ -1,23 +1,56 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import { Container, Form, Spinner } from 'react-bootstrap';
 import './Login.scss';
 import { useForm } from "react-hook-form";
-import inputValidation from '../../../lib/Validation/Validation';
+import inputValidation from '../../../lib/Validation';
+import {USER_ROLE} from "../../../App";
 
 type ILogin = {
     email: string,
     password: string,
+    role: string
+}
+
+export enum LoginType {
+    customer = '/login',
+    admin = "/admin/login"
 }
 
 const Login = () => {
-    const { register, handleSubmit, formState: { errors }, reset } = useForm<ILogin>();
+
+    const navigate = useNavigate();
+    const location = useLocation()
+    const [loginType, setLoginType] = useState("")
     const [isLoading, setIsLoading] = useState(false)
+    const { register, handleSubmit, setValue, formState: { errors }, reset } = useForm<ILogin>();
+
+    useEffect(() => {
+        switch (location.pathname) {
+            case LoginType.customer:
+                setValue("role", USER_ROLE.CUSTOMER)
+                setLoginType(LoginType.customer)
+                break;
+
+            case LoginType.admin:
+                setValue("role", USER_ROLE.ADMIN)
+                setLoginType(LoginType.admin)
+                break;
+        }
+    }, [])
     const onSubmit = handleSubmit((data) => {
         setIsLoading(true)
-        console.log("data", data);
+        switch (loginType) {
+            case LoginType.admin:
+                navigate('/admin/profile')
+                break;
+            case LoginType.customer:
+                navigate('/customer/profile')
+                break;
+        }
         reset()
     })
+
     return (
         <Container className='login_form'>
                 <div className="text">
@@ -47,7 +80,11 @@ const Login = () => {
                             </button>
                         }
                     </div>
-                    <p className='text-center'>Don't have an account? <Link to="/register"><span className='sign_up'>SignUp</span></Link> </p>
+                    {
+                        loginType !== LoginType.admin ?
+                            <p className='text-center'>Don't have an account? <Link to="/register"><span className='sign_up'>SignUp</span></Link> </p>
+                             : null
+                    }
                 </Form>
             </Container>
     )

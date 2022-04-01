@@ -6,18 +6,21 @@ import Profile from "../Pages/Profile/Profile";
 import Orders from "../Pages/Order/Order";
 import Taxes from "../Pages/Taxes/Taxes";
 import ShippingCost from "../Pages/ShippingCost/ShippingCost";
-import CreateCoupons from "../Pages/CreateCoupons/CreateCoupons";
+import Coupons from "../Pages/Coupons/Coupons";
+import CreateCoupons from "../Pages/Coupons/CreateCoupons/CreateCoupons";
 import Categories from "../Pages/Categories/Categories";
 import Attributes from "../Pages/Attributes/Attributes";
 import Products from "../Pages/Products/Product";
 import CreateProduct from "../Pages/Products/CreateProduct/CreateProduct";
 import CreateUser from "../Pages/CreateUser/CreateUser";
-import CreateRole from "../Pages/CreateRole/CreateRole";
+import Role from "../Pages/Role/Role";
+import CreateRole from "../Pages/Role/CreateRole/CreateRole";
 import EditMenu from "../Pages/EditMenu/EditMenu";
 import PictureApproval from "../Pages/PictureApproval/PictureApproval";
 import ReviewApproval from "../Pages/ReviewApproval/ReviewApproval";
 import Slider from "../Pages/Slider/Slider";
 import Seo from "../Pages/SEO/Seo";
+import EditPages from "../Pages/EditPages/EditPages";
 
 export interface RoutesLink {
     component: JSX.Element,
@@ -44,7 +47,15 @@ export const adminRoutes: RoutesLink[] = [
         component: <Taxes/>,
     },
     {
-        path: '/admin/create-coupons',
+        path: '/admin/coupons',
+        component: <Coupons/>,
+    },
+    {
+        path: '/admin/create-coupon',
+        component: <CreateCoupons/>,
+    },
+    {
+        path: '/admin/edit-coupon/:id',
         component: <CreateCoupons/>,
     },
     {
@@ -64,7 +75,11 @@ export const adminRoutes: RoutesLink[] = [
         component: <Products/>,
     },
     {
-        path: '/admin/edit-products',
+        path: '/admin/edit-product/:id',
+        component: <CreateProduct/>,
+    },
+    {
+        path: '/admin/create-product',
         component: <CreateProduct/>,
     },
     {
@@ -72,7 +87,15 @@ export const adminRoutes: RoutesLink[] = [
         component: <CreateUser/>,
     },
     {
+        path: '/admin/role',
+        component: <Role/>,
+    },
+    {
         path: '/admin/create-role',
+        component: <CreateRole/>,
+    },
+    {
+        path: '/admin/edit-role/:id',
         component: <CreateRole/>,
     },
     {
@@ -95,6 +118,10 @@ export const adminRoutes: RoutesLink[] = [
         path: '/admin/seo',
         component: <Seo/>,
     },
+    {
+        path: '/admin/edit-pages',
+        component: <EditPages/>,
+    },
 ]
 
 export const adminSideBarItems: SideBarAdminRoutes[] = [
@@ -104,14 +131,19 @@ export const adminSideBarItems: SideBarAdminRoutes[] = [
         title: 'Profile',
     },
     {
+        path: '/admin/edit-pages',
+        icon: <RiIcons.RiProductHuntFill/>,
+        title: 'Edit Pages',
+    },
+    {
         path: '/admin/orders',
         icon: <RiIcons.RiProductHuntFill/>,
         title: 'View Orders',
     },
     {
-        path: '/admin/create-coupons',
+        path: '/admin/coupons',
         icon: <MdIcons.MdOutlineCategory/>,
-        title: 'Create Coupons',
+        title: 'Coupons',
     },
     {
         path: '/admin/shipping-cost',
@@ -168,7 +200,7 @@ export const adminSideBarItems: SideBarAdminRoutes[] = [
         title: 'Create User',
     },
     {
-        path: '/admin/create-role',
+        path: '/admin/role',
         icon: <MdIcons.MdOutlineCategory/>,
         title: 'Create Role',
     },

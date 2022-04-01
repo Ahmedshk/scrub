@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Col, Row, Card } from 'react-bootstrap'
+import {Container, Col, Row, Card, Form} from 'react-bootstrap'
 import './Rewards.scss';
 import cardImage1 from '../../../../assets/img/offer_gift.png'
 import cardImage2 from '../../../../assets/img/offer_gift.png'
@@ -26,6 +26,10 @@ const GiftCard = () => {
             img: cardImage5
         }
     ]
+
+    const onChangeHandler = (data: any) => {
+        console.log(data)
+    }
 
     return (
         <div className={'page_responsive'}>
@@ -67,16 +71,20 @@ const GiftCard = () => {
 
                         <Col md={6}>
                             <div className='cards_container'>
-                                {cardData.map((data) => {
-                                    return (
-                                        <div className="mt-4" key={data.id}>
+                                {
+                                    cardData.map((data: any) => (
+                                        <div key={`default-${data.id}`} className="mb-3">
                                             <Card>
-                                                <input type= "checkbox" />
+                                                <Form.Check
+                                                    type='checkbox'
+                                                    id={`default-${data.id}`}
+                                                    onChange={() => onChangeHandler(data)}
+                                                />
                                                 <Card.Img className="img-fluid" variant="top" src={data.img} />
                                             </Card>
                                         </div>
-                                    )
-                                })}
+                                    ))
+                                }
                             </div>
 
                             <div className= "buy_container">

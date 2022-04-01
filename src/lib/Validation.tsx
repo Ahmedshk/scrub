@@ -147,6 +147,27 @@ const validationOption = {
             value: 8,
             message: "Password length must be greater than 7"
         }
+    },
+    subject:{
+        required: "Subject is required"
+    },
+    categoryName:{
+        required: "Category name is required"
+    },
+    parentCategory:{
+        required: "Please select any parent category"
+    },
+    attributeName:{
+        required: "attribute name is required"
+    },
+    attributeCategory:{
+        required: "Please select any attribute category"
+    },
+    menuName:{
+        required: "Menu name is required"
+    },
+    roleName:{
+        required: "Role name is required"
     }
 }
 

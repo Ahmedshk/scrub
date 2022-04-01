@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
-import {Container, Row, Col, Form, Spinner} from 'react-bootstrap'
+import React, { useState } from 'react';
+import { Container, Row, Col, Form, Spinner } from 'react-bootstrap'
+import { FaHome } from 'react-icons/fa';
 import { FiEdit } from 'react-icons/fi'
 import { useForm } from "react-hook-form";
-import inputValidation from '../../../../lib/Validation/Validation';
+import inputValidation from '../../../../lib/Validation';
 import "./CartDetails.scss";
 
 type ShippingDetails = {
@@ -10,18 +11,25 @@ type ShippingDetails = {
     address: string,
     city: string,
     country: string,
-    paymentMethod: string,
+    cardNumber:number,
+    cvv:number,
+    expires:number
+
 }
 
 const CartDetails = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<ShippingDetails>();
     const [isLoading, setIsLoading] = useState(false)
+    const [paymentChange, setPaymentChange] = useState("")
 
-    const onSubmitHandler = (data: ShippingDetails) => {
+    const onSubmitHandler = handleSubmit((data) => {
         setIsLoading(true)
+        if(paymentChange === ""){
+            setPaymentChange("Please select any method")
+        }
         console.log("data", data);
         reset()
-    };
+    })
 
     return (
         <Container fluid>
@@ -34,7 +42,7 @@ const CartDetails = () => {
                             <small className="change"> Change</small>
                         </div>
                     </div>
-                    <Form onSubmit={handleSubmit(onSubmitHandler)}>
+                    <Form onSubmit={onSubmitHandler}>
                         <Row>
                             <Col md={12} className="mt-2">
                                 <Form.Group className="mb-1">
@@ -46,6 +54,7 @@ const CartDetails = () => {
                             <Col md={12} className="mt-2">
                                 <Form.Group className="mb-3">
                                     <label className='order_form_label'>Address</label>
+                                    <span className='home_icon'><FaHome /></span>
                                     <Form.Control type="text" placeholder="Enter your address" {...register('address', inputValidation.address)} />
                                     <small className="text-danger"> {errors.address && errors.address.message} </small>
                                 </Form.Group>
@@ -65,17 +74,42 @@ const CartDetails = () => {
                                 </Form.Group>
                             </Col>
                             <Col md={12}>
-                                <Form.Select>
-                                    <option>Please select</option>
+                                <Form.Select onChange={(e) => setPaymentChange(e.target.value)}>
+                                    <option hidden value={""}>Please select</option>
                                     <option value="1">Paypal</option>
                                     <option value="2">Master Card</option>
                                     <option value="3">Credit Card</option>
                                 </Form.Select>
+
                             </Col>
 
+                            {paymentChange ?
+                                <React.Fragment>
+                                    <Col md={12} className='mt-2'>
+                                        <label className='order_form_label'>Card Number</label>
+                                        <Form.Control type="number" placeholder="Enter your card number" {...register('cardNumber', inputValidation.cardNumber)} />
+                                        <small className="text-danger"> {errors.cardNumber && errors.cardNumber.message} </small>
+                                    </Col>
+
+                                    <Col md={6}>
+                                        <label className='order_form_label'>CVV</label>
+                                        <Form.Control type="number" placeholder="Enter your card number" {...register('cvv', inputValidation.cvv)} />
+                                        <small className="text-danger"> {errors.cvv && errors.cvv.message} </small>
+                                    </Col>
+
+                                    <Col md={6}>
+                                        <label className='order_form_label'>Expires</label>
+                                        <Form.Control type="date" placeholder="Enter your card number" {...register('expires', inputValidation.expires)} />
+                                        <small className="text-danger"> {errors.expires && errors.expires.message} </small>
+                                    </Col>
+                                </React.Fragment>
+                                : null
+                            }
+
                             <Col md={12}>
-                                <div className="border_btn_container">
-                                    { isLoading ? <Spinner animation={'border'} /> : <button className='save_btn mx-2'>Save</button> }
+                                <div className="border_btn_container mt-3">
+                                    {isLoading ? <Spinner animation={'border'} /> : <button className='save_btn mx-2'>Save</button>}
+                                    {/*<button className='cancel_btn'>Cancel</button>*/}
                                 </div>
                             </Col>
                         </Row>

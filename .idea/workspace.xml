@@ -2,55 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="597d4a6f-a305-4462-90e9-d31d8c6ae6e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Modal/Modal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/CreateRole/CreateRole.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/CreateUser/CreateUser.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/EditMenu/EditMenu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/PictureApproval/PictureApproval.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/ReviewApproval/ReviewApproval.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/SEO/Seo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Slider/Slider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Auth/ForgetPassword/ForgetPassword.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Auth/ForgetPassword/ForgetPassword.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Auth/Login/Login.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Auth/Login/Login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Auth/Register/Register.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Auth/Register/Register.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Auth/ResetPassword/ResetPassword.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Auth/ResetPassword/ResetPassword.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/toast.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/DeleteModal/DeleteModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Editor/Editor.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/RatingStars/RatingStar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/SeoForm/SeoForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Coupons/Coupons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Coupons/Coupons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Coupons/CreateCoupons/CreateCoupons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/EditPages/EditPages.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/EditPages/EditPages.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/PictureApproval/PictureApproval.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Role/CreateRole/CreateRole.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/SEO/Seo.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/ShippingCost/ShippingCost.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Slider/Slider.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Footer/Footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Header/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Testimonial/Testimonial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SliderTestimonial/SliderTestimonial.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Testimonial/Testimonial.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SliderTestimonial/SliderTestimonial.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/UploadPhoto/UploadPhoto.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Home/UploadPhoto/UploadPhoto.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/UploadPhoto/UploadPhoto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Home/UploadPhoto/UploadPhoto.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Validation/Validation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Validation/Validation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Container/Admin/Navbar/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Navbar/routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/Attributes/Attributes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Attributes/Attributes.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/Categories/Categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Categories/Categories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/CreateCoupons/CreateCoupons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/CreateCoupons/CreateCoupons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/Categories/Category.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Categories/Category.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/CreateCoupons/CreateCoupons.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/CreateRole/CreateRole.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Role/Role.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/EditMenu/EditMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/EditMenu/EditMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/PictureApproval/PictureApproval.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/PictureApproval/PictureApproval.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/Products/CreateProduct/CreateProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Products/CreateProduct/CreateProduct.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/Products/Product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Products/Product.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/Products/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Products/Product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/ReviewApproval/ReviewApproval.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/ReviewApproval/ReviewApproval.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/SEO/Seo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/SEO/Seo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/ShippingCost/ShippingCost.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/ShippingCost/ShippingCost.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/Taxes/Taxes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Taxes/Taxes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Pages/About/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/About/About.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Admin/Pages/Slider/Slider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Admin/Pages/Slider/Slider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Auth/ForgetPassword/ForgetPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Auth/ForgetPassword/ForgetPassword.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Auth/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Auth/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Auth/Register/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Auth/Register/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Auth/ResetPassword/ResetPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Auth/ResetPassword/ResetPassword.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Customer/Pages/Orders/Orders.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Customer/Pages/Orders/Orders.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Customer/Pages/Rewards/Rewards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Customer/Pages/Rewards/Rewards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Customer/Pages/Support/Support.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Customer/Pages/Support/Support.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Customer/Pages/UploadPhoto/UploadPhoto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Customer/Pages/UploadPhoto/UploadPhoto.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Container/Pages/Career/Career.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Career/Career.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Container/Pages/ContactUs/Contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/ContactUs/Contact.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Pages/Orders/CartDetails/CartDetails.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Orders/CartDetails/CartDetails.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Container/Pages/Orders/CartDetails/CartDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Orders/CartDetails/CartDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Pages/Orders/Order.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Orders/Order.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Pages/Orders/OrderDetails/OrderDetails.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Orders/OrderDetails/OrderDetails.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Pages/Orders/OrderDetails/OrderDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Orders/OrderDetails/OrderDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Pages/Testimonials/Testimonials.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Testimonials/Testimonials.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Pages/Testimonials/Testimonials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Pages/Testimonials/Testimonials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/Validation/Validation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/Validation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,8 +91,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\2022\Scrub\scrub\src\Container\Pages" />
       <recent name="D:\2022\Scrub\scrub\src\lib" />
+      <recent name="D:\2022\Scrub\scrub\src\Container\Pages" />
       <recent name="D:\2022\Scrub\scrub\src\Container\Pages\Home" />
       <recent name="D:\2022\Scrub\scrub\src\Container\Pages\Home\Products" />
       <recent name="D:\2022\Scrub\scrub\src\Container\Pages\Orders" />
@@ -123,7 +122,9 @@
       <workItem from="1648532327543" duration="4727000" />
       <workItem from="1648537289812" duration="13079000" />
       <workItem from="1648628888517" duration="8227000" />
-      <workItem from="1648709467263" duration="22345000" />
+      <workItem from="1648709467263" duration="22665000" />
+      <workItem from="1648793426138" duration="6234000" />
+      <workItem from="1648806443580" duration="15591000" />
     </task>
     <servers />
   </component>
