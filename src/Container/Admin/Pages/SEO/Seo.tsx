@@ -1,33 +1,35 @@
 import React, { useState } from 'react'
 import './Seo.scss'
-import { Tab, Tabs } from "react-bootstrap";
+import { Container, Col, Row, Form } from "react-bootstrap";
 import SEOForm from '../../../../Components/SeoForm/SeoForm';
 
-enum SEO_KEY {
-    Home = "Home",
-    AboutUs = "AboutUs",
-    ContactUs = "ContactUs",
-}
-
 const SEO = () => {
-    const [key, setKey] = useState<string>(SEO_KEY.Home)
+    const [pageValue, setPageValue] = useState('Home')
     return (
         <div className='page_responsive'>
-            <Tabs
-                activeKey={key}
-                onSelect={(k) => setKey(k!)}
-                className="mb-3 tabs"
-            >
-                <Tab eventKey={SEO_KEY.Home} title="Home" className={'w-100'}>
-                    <SEOForm />
-                </Tab>
-                <Tab eventKey={SEO_KEY.AboutUs} title='About Us' className={'w-100'}>
-                    <SEOForm />
-                </Tab>
-                <Tab eventKey={SEO_KEY.ContactUs} title='Contact Us' className={'w-100'}>
-                    <SEOForm />
-                </Tab>
-            </Tabs>
+            <h3>SEO</h3>
+            <Container>
+                <Row>
+                    <Col md={9}>
+                        <div className='seo_container'>
+                            <Form.Select aria-label="Default select example" onChange={(e) => setPageValue(e.target.value)}>
+                                <option hidden value={''}>Please select any page</option>
+                                <option value="Home">Home</option>
+                                <option value="AboutUs">AboutUs</option>
+                                <option value="ContactUs">ContactUs</option>
+                            </Form.Select>
+                        </div>
+                    </Col>
+                    <Col md={12}>
+                        <div className='mt-4'>
+                            {pageValue ?
+                                <SEOForm />
+                                : null
+                            }
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
         </div >
     )
 }

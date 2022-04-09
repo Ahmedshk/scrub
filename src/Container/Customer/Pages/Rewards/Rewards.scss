@@ -58,20 +58,8 @@
   }
 
   .buy_container {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin-top: 30px;
-    button {
-      font-weight: bold;
-      letter-spacing: 1px;
-      width: 80px;
-      height: 34px;
-      font-size: 14px;
-      border: none;
-      border-style: none;
-      background-color: #003f67;
-      color: white;
-      font-family: Montserrat;
-      box-shadow: 0px 6px 5px 1px grey;
-    }
   }
 }

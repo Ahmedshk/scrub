@@ -3,12 +3,12 @@ import "./Product.scss";
 import {useNavigate} from "react-router-dom";
 import {Button} from "react-bootstrap";
 import MuiDataTable from "../../../../Components/MuiDataTable/MuiDataTable";
+import {productData} from "../../../../hooks/admin";
 import DeleteModal from "../../../../Components/DeleteModal/DeleteModal";
 
 const Products = () => {
     const navigate = useNavigate();
     const [show, setShow] = useState(false)
-
     const editHandler = () => {
         navigate('/admin/edit-product/123');
     }
@@ -43,13 +43,6 @@ const Products = () => {
         setShow(!show)
     }
 
-    const data = [
-        ["1", "Alabama", '20'],
-        ["2", "Alaska", '34'],
-        ["3", "Arizona", '11'],
-        ["4", "Arkansas", '21'],
-        ["4", "California", '33'],
-    ];
 
     return (
         <div className={'page_responsive'}>
@@ -57,9 +50,9 @@ const Products = () => {
             <h3> Products </h3>
 
             <div className={'create_product_btn'}>
-                <Button onClick={() => navigate('/admin/create-product')}>Create Product</Button>
+                <Button className="all_btns" onClick={() => navigate('/admin/create-product')}>Create Product</Button>
             </div>
-            <MuiDataTable data={data} columns={columns} />
+            <MuiDataTable data={productData} columns={columns} />
         </div>
     );
 };

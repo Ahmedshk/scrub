@@ -3,23 +3,18 @@ import {Button, Container, Form} from "react-bootstrap";
 import inputValidation from "../../../../../lib/Validation";
 import {useForm} from "react-hook-form";
 import {useParams, useNavigate} from "react-router-dom";
-
-type CouponsInterface = {
-    couponName: string,
-    couponCode: string,
-    discountedPrice: number
-}
+import {CouponsInterface} from '../../../../../Interfaces/index'
+import {successNotify} from "../../../../../Utils/toast";
 
 const CreateCoupons = () => {
     const navigate = useNavigate();
     const {id} = useParams()
     const isAddMode = !id;
-
     const { register, handleSubmit, formState: { errors }, reset } = useForm<CouponsInterface>();
-
+    
     const onSubmitHandler = handleSubmit((data) => {
         console.log("data", data);
-        console.log('success')
+        successNotify('success')
         reset()
     })
 
@@ -27,7 +22,7 @@ const CreateCoupons = () => {
         <div className={'page_responsive'}>
             <h3>{!isAddMode ? "Update" : "Create"} Coupon</h3>
             <div className={'create_product_btn'}>
-                <Button onClick={() => navigate('/admin/coupons')}>Back</Button>
+                <Button className="all_btns" onClick={() => navigate('/admin/coupons')}>Back</Button>
             </div>
             <Container className={'mt-4'}>
                     <Form onSubmit={onSubmitHandler}>
@@ -46,8 +41,18 @@ const CreateCoupons = () => {
                             <small className="text-danger"> {errors.discountedPrice && errors.discountedPrice.message} </small>
                         </Form.Group>
 
+                        <Form.Group className="mb-3">
+                            <Form.Control type="number" {...register('limit', inputValidation.limit)} placeholder="Enter limit" />
+                            <small className="text-danger"> {errors.limit && errors.limit.message} </small>
+                        </Form.Group>
+
+                        <Form.Group className="mb-3">
+                            <Form.Control type="date" {...register('expiry', inputValidation.expiry)} placeholder="Enter limit" />
+                            <small className="text-danger"> {errors.expiry && errors.expiry.message} </small>
+                        </Form.Group>
+
                         <div className="text-end">
-                            <button className="Submit_btn" type="submit">{!isAddMode ? "Update" : "Create"} Coupon</button>
+                            <Button className="all_btns" type="submit">{!isAddMode ? "Update" : "Create"} Coupon</Button>
                         </div>
                     </Form>
             </Container>

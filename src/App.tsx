@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from "./Container/Pages/Header/Header";
 import Footer from "./Container/Pages/Footer/Footer";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import {Slide, ToastContainer} from "react-toastify";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Slide, ToastContainer } from "react-toastify";
 
-import {customerRoutes, RoutesLink } from "./Container/Customer/Navbar/routes";
+import { customerRoutes, RoutesLink } from "./Container/Customer/Navbar/routes";
 import CustomerNavbar from "./Container/Customer/Navbar/Navbar";
 
-import {adminRoutes } from "./Container/Admin/Navbar/routes";
+import { adminRoutes } from "./Container/Admin/Navbar/routes";
 import AdminNavBar from "./Container/Admin/Navbar/Navbar";
 
 import Home from "./Container/Pages/Home/Home";
@@ -22,6 +22,11 @@ import Register from "./Container/Auth/Register/Register";
 import Login from "./Container/Auth/Login/Login";
 import ForgetPassword from "./Container/Auth/ForgetPassword/ForgetPassword";
 import ResetPassword from "./Container/Auth/ResetPassword/ResetPassword";
+import Shop from './Container/Pages/Shop/Shop';
+import ShopDescription from './Container/Pages/ShopDescription/ShopDescription';
+import OrderSummary from './Container/Pages/OrderSummary/OrderSummary';
+import AddressData from './Container/Pages/AddressDataType/AddressData';
+import PaymentMethod from './Container/Pages/PaymentMethod/PaymentMethod';
 import './App.scss';
 
 export enum USER_ROLE {
@@ -35,7 +40,7 @@ const App = () => {
             <Route key={index} path={item.path} element={
                 <React.Fragment>
                     <CustomerNavbar />
-                        { item.component }
+                    {item.component}
                 </React.Fragment>
             } />
         ))
@@ -45,7 +50,7 @@ const App = () => {
             <Route key={index} path={item.path} element={
                 <React.Fragment>
                     <AdminNavBar />
-                    { item.component }
+                    {item.component}
                 </React.Fragment>
             } />
         ))
@@ -69,7 +74,7 @@ const App = () => {
                 <Routes>
                     {customerLayout}
                     {adminLayout}
-                    <Route path={'/'}  element={
+                    <Route path={'/'} element={
                         <React.Fragment>
                             <Header />
                             <Home />
@@ -122,6 +127,47 @@ const App = () => {
                         <React.Fragment>
                             <Header />
                             <Order />
+                            <Footer />
+                        </React.Fragment>
+                    } />
+
+                    <Route path={'/shop'} element={
+                        <React.Fragment>
+                            <Header />
+                            <Shop />
+                            <Footer />
+                        </React.Fragment>
+                    } />
+
+
+                    <Route path={'/shop-description'} element={
+                        <React.Fragment>
+                            <Header />
+                            <ShopDescription />
+                            <Footer />
+                        </React.Fragment>
+                    } />
+
+                    <Route path={'/order-summary'} element={
+                        <React.Fragment>
+                            <Header />
+                            <OrderSummary />
+                            <Footer />
+                        </React.Fragment>
+                    } />
+
+                    <Route path={'/address-data'} element={
+                        <React.Fragment>
+                            <Header />
+                            <AddressData />
+                            <Footer />
+                        </React.Fragment>
+                    } />
+
+                    <Route path={'/payment-method'} element={
+                        <React.Fragment>
+                            <Header />
+                            <PaymentMethod />
                             <Footer />
                         </React.Fragment>
                     } />

@@ -3,7 +3,7 @@ import Profile from "../../../../Components/Profile/Profile";
 
 const AdminProfile = () => {
     return (
-        <Profile heading={'Edit Profile'} />
+        <Profile heading={'Edit Admin Profile'} role={false}/>
     );
 };
 export default AdminProfile;

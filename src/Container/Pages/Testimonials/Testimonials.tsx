@@ -1,46 +1,11 @@
 import React from 'react';
 import { Container, Col, Row } from "react-bootstrap"
-import testimonialImage1 from '../../../assets/img/testimonial1.jpg'
-import testimonialImage2 from '../../../assets/img/testimonial2.jpg'
 import "./Testimonials.scss";
 import {ImQuotesLeft} from "react-icons/im";
+import {testimonialsData} from "../../../hooks/others/testimonials"
 import Banner from "../../../Components/Banner/Banner";
 
 const Testimonials = () => {
-    const testimonialsData = [
-        {
-            id: 1,
-            img: testimonialImage1,
-            name: "JASMIN DESOVE",
-            role: 'Nurse',
-            comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi saepe ratione iste et nisi nihil natus ipsa commodi. Recusandae inventore minus esse ut similique, distinctio alias fugiat eum nostrum odio?\n' +
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi saepe ratione iste et nisi nihil natus ipsa commodi. Recusandae inventore minus esse ut similique, distinctio'
-        },
-        {
-            id: 2,
-            img: testimonialImage2,
-            name: "JASMIN DESOVE",
-            role: 'Nurse',
-            comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi saepe ratione iste et nisi nihil natus ipsa commodi. Recusandae inventore minus esse ut similique, distinctio alias fugiat eum nostrum odio?\n' +
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi saepe ratione iste et nisi nihil natus ipsa commodi. Recusandae inventore minus esse ut similique, distinctio'
-        },
-        {
-            id: 3,
-            img:testimonialImage1,
-            name: "JASMIN DESOVE",
-            role: 'Nurse',
-            comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi saepe ratione iste et nisi nihil natus ipsa commodi. Recusandae inventore minus esse ut similique, distinctio alias fugiat eum nostrum odio?\n' +
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi saepe ratione iste et nisi nihil natus ipsa commodi. Recusandae inventore minus esse ut similique, distinctio'
-        },
-        {
-            id: 4,
-            img: testimonialImage2,
-            name: "JASMIN DESOVE",
-            role: 'Nurse',
-            comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi saepe ratione iste et nisi nihil natus ipsa commodi. Recusandae inventore minus esse ut similique, distinctio alias fugiat eum nostrum odio?\n' +
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi saepe ratione iste et nisi nihil natus ipsa commodi. Recusandae inventore minus esse ut similique, distinctio'
-        },
-    ]
 
     return (
         <React.Fragment>

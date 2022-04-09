@@ -11,7 +11,7 @@ const Footer = () => {
         <React.Fragment>
             <div className={'footer'}>
             <h1>INBOX ME!</h1>
-            <p> Sign up to our newsletter and we’’ll keep you up to date with the latest arrivals </p>
+            <p> Sign up to our newsletter and we’ll keep you up to date with the latest arrivals </p>
 
             <div className={'footer_form'}>
                 <form>

@@ -1,29 +1,24 @@
 import React, { useState } from 'react'
-import { Container, Col, Row, Form } from 'react-bootstrap'
+import { Container, Col, Row, Form,Button } from 'react-bootstrap'
 import './EditPages.scss'
 import Select from 'react-select'
 import { useForm, Controller } from "react-hook-form"
 import EditPageModal from "../../../../Components/Modal/Modal";
 import Editor from '../../../../Components/Editor/Editor';
-
-type EditPagesInterface = {
-    pagesCategory: {
-        label: string,
-        value: string
-    }
-}
+import {EditPagesInterface} from '../../../../Interfaces/index'
+import {errorNotify,successNotify} from '../../../../Utils/toast'
 
 const EditPages = () => {
     const [show, setShow] = useState(false);
-
     const { handleSubmit, reset, control } = useForm<EditPagesInterface>();
     const onSubmitHandler = handleSubmit((data) => {
         if (!data.pagesCategory) {
-            console.log("Please Select any Parent Category")
+            errorNotify("Please select any page")
         }
         else {
             console.log("data", data);
-            console.log('success')
+            successNotify("Success!")
+            setShow(true)
             reset()
         }
     })
@@ -39,12 +34,10 @@ const EditPages = () => {
 
     const modal = (
         <EditPageModal size='md' modalTitle={"Page"} show={show} handleClose={() => setShow(false)}>
-            <React.Fragment>
-                <Editor />
-            </React.Fragment>
+            <Editor />
         </EditPageModal>
     )
-    const handleShow = () => setShow(true);
+    
 
     return (
         <div className='page_responsive'>
@@ -69,10 +62,10 @@ const EditPages = () => {
                             />
                             <div className='edit_page_container'>
                                 <div>
-                                    <button onClick={handleShow}>Edit Page</button>
+                                    <Button type="submit" className='all_btns'>Edit Page</Button>
                                 </div>
                                 <div>
-                                    <button onClick={handleShow}>Create New Page</button>
+                                    <Button type="submit" className='all_btns'>Create New Page</Button>
                                 </div>
                             </div>
                         </Col>
@@ -80,9 +73,7 @@ const EditPages = () => {
                 </Row>
                 {modal}
             </Container>
-
         </div>
     )
 }
-
 export default EditPages

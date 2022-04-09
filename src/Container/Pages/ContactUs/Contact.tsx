@@ -12,23 +12,17 @@ import SliderTestimonial from "../../../Components/SliderTestimonial/SliderTesti
 import ContactImage from '../../../assets/img/contact-us-image.png';
 import inputValidation from '../../../lib/Validation';
 import "./Contact.scss";
-
-type ContactInterface = {
-    name: string,
-    email: string,
-    textMessage: string
-}
+import {ContactInterface} from '../../../Interfaces/index'
 
 const Contact = () => {
-
     const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactInterface>();
     const [isLoading, setIsLoading] = useState(false)
 
-    const onSubmitHandler = (data: ContactInterface) => {
+    const onSubmitHandler = handleSubmit((data) => {
         setIsLoading(true)
         console.log('success')
         reset()
-    };
+    })
 
     return (
         <React.Fragment>
@@ -42,7 +36,7 @@ const Contact = () => {
                         </div>
                         <div className='form_container'>
                             <h6> Send Message </h6>
-                            <Form onSubmit={handleSubmit(onSubmitHandler)}>
+                            <Form onSubmit={onSubmitHandler}>
                                 <Row>
                                     <Col md={6} className="mt-2">
                                         <Form.Group className="mb-3">

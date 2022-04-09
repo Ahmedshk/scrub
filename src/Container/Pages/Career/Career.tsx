@@ -6,27 +6,15 @@ import { useForm, Controller } from "react-hook-form";
 import {errorNotify} from "../../../Utils/toast";
 import inputValidation from '../../../lib/Validation';
 import Select from "react-select";
+import {JobApplication} from '../../../Interfaces/index'
 
-type JobApplication = {
-    firstname: string,
-    lastname: string,
-    email: string,
-    phone: string,
-    applied: {
-        label: string,
-        value: string
-    },
-    date: number,
-    image: File
-}
 
 const Career = () => {
     const { register, handleSubmit, formState: { errors }, reset, control } = useForm<JobApplication>();
     const [isLoading, setIsLoading] = useState(false)
     const [applied, setApplied] = useState<any>([])
 
-
-    const onSubmit = (data: JobApplication) => {
+    const onSubmit = handleSubmit((data) => {
         setIsLoading(true)
         if(!data.applied) {
             setIsLoading(false)
@@ -37,7 +25,7 @@ const Career = () => {
             setIsLoading(false)
             reset()
         }
-    };
+    });
     useEffect(() => {
         setApplied([
             { value: 'C One', label: 'C One' },
@@ -62,12 +50,12 @@ const Career = () => {
                     </Col>
                     <Col className='mt-3 border-box' md={6}>
                         <div className='form_container'>
-                            <Form onSubmit={handleSubmit(onSubmit)}>
+                            <Form onSubmit={onSubmit}>
                                 <h4>Job Application</h4>
                                 <Row>
                                     <Col md={6}>
                                         <Form.Group className="mb-3">
-                                            <label className='label_text'>Name</label>
+                                            <label className='label_text'>First Name</label>
                                             <Form.Control type="text" placeholder="First name" {...register('firstname', inputValidation.firstname)} />
                                             <small className="text-danger"> {errors.firstname && errors.firstname.message} </small>
                                         </Form.Group>

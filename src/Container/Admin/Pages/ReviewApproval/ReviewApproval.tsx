@@ -2,6 +2,7 @@ import React from 'react'
 import './ReviewApproval.scss'
 import MuiDataTable from "../../../../Components/MuiDataTable/MuiDataTable";
 import { Container } from 'react-bootstrap'
+import {reviewData} from "../../../../hooks/admin";
 import RatingStar from '../../../../Components/RatingStars/RatingStar';
 
 const ReviewApproval = () => {
@@ -39,12 +40,6 @@ const ReviewApproval = () => {
             },
         }];
 
-    const data = [
-        ["Username", "User review", "Product", "Delete"],
-        ["Username", "User review", "Product", "Delete"],
-        ["Username", "User review", "Product", "Delete"],
-        ["Username", "User review", "Product", "Delete"],
-    ];
 
     return (
         <div className='page_responsive'>
@@ -52,7 +47,7 @@ const ReviewApproval = () => {
             <Container>
                 <div>
                     <MuiDataTable
-                        data={data}
+                        data={reviewData}
                         columns={columns}
                     />
                 </div>

@@ -42,7 +42,7 @@ const Home = () => {
                             </div>
                         </Col>
                         <Col md={6} className={'mt-4'}>
-                            <div className='collection_images'>
+                            <div className='collection_img'>
                                 <img className='img-fluid' src={gridImage2} alt={'img'} />
                             </div>
                         </Col>

@@ -3,10 +3,7 @@ import { Form, Container, Row, Col, Button, Spinner } from "react-bootstrap";
 import "./UploadPhoto.scss";
 import { useForm } from "react-hook-form";
 import inputValidation from '../../../../lib/Validation';
-
-type UploadPhotoInterface = {
-    image: File,
-}
+import {UploadPhotoInterface} from '../../../../Interfaces/index'
 
 const UploadPhoto = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<UploadPhotoInterface>();
@@ -34,7 +31,7 @@ const UploadPhoto = () => {
                         <Col md={12}>
                             <div className='text-center'>
                                 {isLoading ? <Spinner className='mt-3' animation={'border'} /> :
-                                    <Button type="submit">
+                                    <Button className='all_btns' type="submit">
                                         Submit
                                     </Button>
                                 }

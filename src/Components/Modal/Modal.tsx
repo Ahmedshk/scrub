@@ -10,7 +10,7 @@ export interface IModalInfo {
 
 }
 
-const ModalInfo: React.FC<IModalInfo> = ({ modalTitle, show, handleClose, children }) => {
+const ModalData: React.FC<IModalInfo> = ({ modalTitle, show, handleClose, children }) => {
     return (
         <Modal size={'lg'} show={show} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -21,4 +21,4 @@ const ModalInfo: React.FC<IModalInfo> = ({ modalTitle, show, handleClose, childr
     )
 }
 
-export default ModalInfo
+export default ModalData

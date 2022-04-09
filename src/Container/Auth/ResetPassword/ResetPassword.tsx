@@ -3,11 +3,7 @@ import { Container, Form, Spinner } from 'react-bootstrap'
 import './ResetPassword.scss'
 import { useForm } from "react-hook-form";
 import inputValidation from '../../../lib/Validation';
-
-type IResetPass = {
-    password: string,
-    confirmPassword: string
-}
+import {IResetPass} from '../../../Interfaces/index';
 
 const ResetPassword = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<IResetPass>();
@@ -48,5 +44,4 @@ const ResetPassword = () => {
         </React.Fragment>
     )
 }
-
 export default ResetPassword;

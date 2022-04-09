@@ -1,46 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Col, Row, Form, Button } from 'react-bootstrap'
-import {useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form"
 import Select from 'react-select';
 import './CreateProduct.scss';
-import {errorNotify, successNotify} from "../../../../../Utils/toast";
+import { errorNotify, successNotify } from "../../../../../Utils/toast";
 import inputValidation from '../../../../../lib/Validation';
-
-type ProductInterface = {
-    productName: string,
-    productDescription: string;
-    category: {
-        label: string,
-        value: string
-    };
-    attribute: {
-        label: string,
-        value: string
-    };
-    image: File;
-    productPrice: string;
-    discountedPrice: string;
-    size: {
-        label: string,
-        value: string
-    };
-    productQuantity: number
-}
+import { ProductInterface } from '../../../../../Interfaces/index'
 
 const Products = () => {
     const navigate = useNavigate();
-    const {id} = useParams()
+    const { id } = useParams()
     const isAddMode = !id;
-
     const [categoryOptions, setCategoryOptions] = useState<any>([]);
     const [attributes, setAttributes] = useState<any>([])
     const [sizes, setSizes] = useState<any>([])
-
     const { register, handleSubmit, formState: { errors }, reset, control } = useForm<ProductInterface>();
-
     const onSubmitHandler = handleSubmit((data) => {
-        if (!data.attribute|| !data.category|| !data.size) {
+        if (!data.attribute || !data.category || !data.size) {
             errorNotify("Please Select All fields")
         }
         else {
@@ -159,8 +136,12 @@ const Products = () => {
                                     <small className="text-danger"> {errors.productQuantity && errors.productQuantity.message} </small>
                                 </Form.Group>
                             </div>
-                            <div className="save_btn_container">
-                                <button>{!isAddMode ? "Update" : "Create"} Product</button>
+                            <div className='add_view_container'>
+                                <Button className='all_btns mb-3' type="submit">{!isAddMode ? "Update" : "Create"} Product</Button>
+                                {!isAddMode ?
+                                    <Button onClick={()=> navigate('/admin/products')} className='all_btns mb-3'>View</Button>
+                                    : null
+                                }
                             </div>
                         </Form>
                     </Col>

@@ -4,15 +4,7 @@ import { Container, Form, Spinner } from 'react-bootstrap';
 import './Register.scss';
 import { useForm } from "react-hook-form";
 import inputValidation from '../../../lib/Validation';
-
-type IRegister = {
-    name: string,
-    email: string,
-    contactNo: number,
-    address: string,
-    password: string,
-    confirmPassword: string,
-}
+import {IRegister} from '../../../Interfaces/index'
 
 const Register = () => {
     const navigate = useNavigate();
@@ -82,5 +74,4 @@ const Register = () => {
             </Container>
     )
 }
-
 export default Register

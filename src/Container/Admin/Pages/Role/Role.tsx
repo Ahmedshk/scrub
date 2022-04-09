@@ -1,15 +1,14 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
 import MuiDataTable from "../../../../Components/MuiDataTable/MuiDataTable";
-
+import {roleData} from "../../../../hooks/admin";
+import {Button} from 'react-bootstrap'
 
 const Role = () => {
     const navigate = useNavigate();
-
     const editRoleHandler = () => {
         navigate('/admin/edit-role/123')
     }
-
     let columns = [
         'ID',
         'Role Name',
@@ -26,20 +25,15 @@ const Role = () => {
             },
         },
     ]
-    const data = [
-        ["1", "Sub Admin"],
-        ["2", "Super Admin"],
-        ["3", "Supervisor"],
-    ];
 
     return (
         <div className={'page_responsive'}>
             <h3> Role </h3>
 
             <div className={'create_product_btn'}>
-                <button className='create_role' onClick={() => navigate('/admin/create-role')}>Create Role</button>
+                <Button className='all_btns' onClick={() => navigate('/admin/create-role')}>Create Role</Button>
             </div>
-            <MuiDataTable data={data} columns={columns} />
+            <MuiDataTable data={roleData} columns={columns} />
         </div>
     );
 };

@@ -21,6 +21,15 @@ import ReviewApproval from "../Pages/ReviewApproval/ReviewApproval";
 import Slider from "../Pages/Slider/Slider";
 import Seo from "../Pages/SEO/Seo";
 import EditPages from "../Pages/EditPages/EditPages";
+import EditCategory from '../Pages/Categories/CreateCategory/CreateCategory';
+import CreateAttribute from '../Pages/Attributes/CreateAttribute/CreateAttribute';
+import AllUsers from '../Pages/AllUsers/AllUsers'
+import Dispute from "../Pages/Dispute/Dispute";
+import {CgProfile} from 'react-icons/cg'
+import {HiReceiptTax} from 'react-icons/hi'
+import {FaSlidersH,FaUserEdit,FaCriticalRole} from 'react-icons/fa'
+import {FiUsers} from 'react-icons/fi'
+
 
 export interface RoutesLink {
     component: JSX.Element,
@@ -67,8 +76,24 @@ export const adminRoutes: RoutesLink[] = [
         component: <Categories/>,
     },
     {
+        path: '/admin/create-categories',
+        component: <EditCategory/>,
+    },
+    {
+        path: '/admin/create-categories/:id',
+        component: <EditCategory/>,
+    },
+    {
         path: '/admin/attributes',
         component: <Attributes/>,
+    },
+    {
+        path: '/admin/create-attributes',
+        component: <CreateAttribute/>,
+    },
+       {
+        path: '/admin/create-attributes/:id',
+        component: <CreateAttribute/>,
     },
     {
         path: '/admin/products',
@@ -122,72 +147,80 @@ export const adminRoutes: RoutesLink[] = [
         path: '/admin/edit-pages',
         component: <EditPages/>,
     },
+    {
+        path: '/admin/all-users',
+        component: <AllUsers/>,
+    },
+    {
+        path: '/admin/dispute',
+        component: <Dispute/>,
+    },
 ]
 
 export const adminSideBarItems: SideBarAdminRoutes[] = [
     {
         path: '/admin/profile',
-        icon: <AiIcons.AiFillDashboard/>,
+        icon: <CgProfile/>,
         title: 'Profile',
     },
     {
         path: '/admin/edit-pages',
-        icon: <RiIcons.RiProductHuntFill/>,
+        icon: <MdIcons.MdEditNote/>,
         title: 'Edit Pages',
     },
     {
         path: '/admin/orders',
-        icon: <RiIcons.RiProductHuntFill/>,
+        icon: <MdIcons.MdOutlineViewHeadline/>,
         title: 'View Orders',
     },
     {
         path: '/admin/coupons',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <RiIcons.RiCoupon3Line/>,
         title: 'Coupons',
     },
     {
         path: '/admin/shipping-cost',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <RiIcons.RiPriceTag3Fill/>,
         title: 'Shipping Cost',
     },
     {
         path: '/admin/taxes',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <HiReceiptTax/>,
         title: 'Taxes',
     },
     {
         path: '/admin/products',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <RiIcons.RiProductHuntFill/>,
         title: 'Products',
     },
     {
         path: '/admin/categories',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <MdIcons.MdCategory/>,
         title: 'Categories',
     },
     {
         path: '/admin/attributes',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <MdIcons.MdEditAttributes/>,
         title: 'Attributes',
     },
     {
         path: '/admin/picture-approval',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <MdIcons.MdOutlineApproval/>,
         title: 'Picture Approval',
     },
     {
         path: '/admin/review-approval',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <MdIcons.MdOutlineReviews/>,
         title: 'Review Approval',
     },
     {
         path: '/admin/edit-menu',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <MdIcons.MdEditNote/>,
         title: 'Edit Menu',
     },
     {
         path: '/admin/slider',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <FaSlidersH/>,
         title: 'Slider',
     },{
         path: '/admin/seo',
@@ -196,13 +229,23 @@ export const adminSideBarItems: SideBarAdminRoutes[] = [
     },
     {
         path: '/admin/create-user',
-        icon: <MdIcons.MdOutlineCategory/>,
+        icon: <FaUserEdit/>,
         title: 'Create User',
     },
     {
         path: '/admin/role',
+        icon: <FaCriticalRole/>,
+        title: 'Role',
+    },
+    {
+        path: '/admin/all-users',
+        icon: <FiUsers/>,
+        title: 'All Users',
+    },
+    {
+        path: '/admin/dispute',
         icon: <MdIcons.MdOutlineCategory/>,
-        title: 'Create Role',
+        title: 'Dispute',
     },
 
 ]

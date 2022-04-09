@@ -1,18 +1,11 @@
 import React, {useState} from 'react';
 import {Tab, Tabs} from "react-bootstrap";
 import MuiDataTable from '../../../../Components/MuiDataTable/MuiDataTable';
-
-enum ORDER_KEY {
-    totalOrder = "TotalOrders",
-    pendingOrders = "PendingOrders",
-    inProcessOrders = "InProcessOrders",
-    completedOrders = "CompletedOrders",
-    cancelledOrders = "CancelledOrders"
-}
+import {OrderData} from "../../../../hooks/admin";
+import {ORDER_KEY} from '../../../../Interfaces/index'
 
 const Order = () => {
     const [key, setKey] = useState<string>(ORDER_KEY.totalOrder)
-
     let columns = [
         "ID",
         'Product Name',
@@ -24,13 +17,42 @@ const Order = () => {
                 display: key === ORDER_KEY.totalOrder,
             }
         },
+
+        {
+            name: "Actions",
+            options: {
+                display: key === ORDER_KEY.pendingOrders,
+                customBodyRender: (value: any, tableMeta: any) => {
+                    return (
+                        <React.Fragment>
+                            <button className={'btn mx-2'}>
+                                Accept
+                            </button>
+                            <button className={'btn'}>
+                                Reject
+                            </button>
+                        </React.Fragment>
+                    )
+                }
+            }
+        },
+        {
+            name: "Actions",
+            options: {
+                display: key === ORDER_KEY.inProcessOrders,
+                customBodyRender: (value: any, tableMeta: any) => {
+                    return (
+                        <React.Fragment>
+                            <button className={'btn mx-2'}>
+                                Completed
+                            </button>
+                        </React.Fragment>
+                    )
+                }
+            }
+        },
+        
     ]
-    const data = [
-        ["1", "Shirts", "22-03-22", "$12", 'Completed'],
-        ["2", "Pents", "24-03-22", "$18", 'Pending'],
-        ["3", "Jeans", "25-03-22", "$20", 'InProcess'],
-        ["4", "Trousers", "26-03-22", "$30", 'Cancelled'],
-    ];
 
     return (
         <div className={'page_responsive'}>
@@ -42,19 +64,19 @@ const Order = () => {
                 className="mb-3 tabs"
             >
                 <Tab eventKey={ORDER_KEY.totalOrder} title="Total" className={'w-100'}>
-                    <MuiDataTable title="Total Orders" data={data} columns={columns} />
+                    <MuiDataTable title="Total Orders" data={OrderData} columns={columns} />
                 </Tab>
                 <Tab eventKey={ORDER_KEY.pendingOrders} title='Pending' className={'w-100'}>
-                    <MuiDataTable title="Pending Orders" data={data} columns={columns} />
+                    <MuiDataTable title="Pending Orders" data={OrderData} columns={columns} />
                 </Tab>
                 <Tab eventKey={ORDER_KEY.inProcessOrders} title='In-Progress' className={'w-100'}>
-                    <MuiDataTable title="InProcess Orders" data={data} columns={columns} />
+                    <MuiDataTable title="InProcess Orders" data={OrderData} columns={columns} />
                 </Tab>
                 <Tab eventKey={ORDER_KEY.completedOrders} title='Completed' className={'w-100'}>
-                    <MuiDataTable title="Total Orders" data={data} columns={columns} />
+                    <MuiDataTable title="Total Orders" data={OrderData} columns={columns} />
                 </Tab>
                 <Tab eventKey={ORDER_KEY.cancelledOrders} title='Cancelled' className={'w-100'}>
-                    <MuiDataTable title="Total Orders" data={data} columns={columns} />
+                    <MuiDataTable title="Total Orders" data={OrderData} columns={columns} />
                 </Tab>
             </Tabs>
         </div>

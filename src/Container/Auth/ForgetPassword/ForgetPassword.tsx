@@ -3,10 +3,7 @@ import { Container, Form,Spinner} from 'react-bootstrap'
 import './ForgetPassword.scss'
 import { useForm } from "react-hook-form";
 import inputValidation from '../../../lib/Validation';
-
-type IForgotPass = {
-    email: string,
-}
+import {IForgotPass} from '../../../Interfaces/index'
 
 const ForgotPass = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<IForgotPass>();

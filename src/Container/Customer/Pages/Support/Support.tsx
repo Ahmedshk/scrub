@@ -1,14 +1,9 @@
 import React, { useState } from 'react'
-import { Container, Col, Row, Form, Spinner } from 'react-bootstrap'
+import { Container, Col, Row, Form, Spinner,Button } from 'react-bootstrap'
 import './Support.scss'
 import { useForm } from "react-hook-form";
 import inputValidation from '../../../../lib/Validation';
-
-type SupportInterface = {
-    subject: string,
-    textMessage: string,
-}
-
+import {SupportInterface} from '../../../../Interfaces/index'
 
 const Support = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<SupportInterface>();
@@ -40,7 +35,7 @@ const Support = () => {
                                 </Form.Group>
                                 <div className='text-center'>
                                     {isLoading ? <Spinner className='mt-3' animation={'border'} /> :
-                                        <button className="submit_btn">Submit</button>
+                                        <Button type="submit" className="all_btns">Submit</Button>
                                     }
                                 </div>
                             </Col>

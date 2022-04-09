@@ -1,16 +1,8 @@
 import React from 'react'
-import {Container,Col,Row,Form} from 'react-bootstrap'
+import {Container,Col,Row,Form,Button} from 'react-bootstrap'
 import { useForm } from "react-hook-form";
 import inputValidation from '../../lib/Validation';
-
-type SEOInterface = {
-    metaTitle: string,
-    metaDescription:string,
-    keywords:string,
-    tag1:string,
-    tag2:string
-}
-
+import {SEOInterface} from '../../Interfaces/index'
 
 const SEOForm = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<SEOInterface>();
@@ -52,11 +44,9 @@ const SEOForm = () => {
                                 </Form.Group>
 
                                 <div className='save_btn_container'>
-                                    <button>Save</button>
+                                    <Button className="all_btns" type="submit">Save</Button>
                                 </div>
-
                             </Form>
-
                         </div>
                     </Col>
                 </Row>
@@ -64,5 +54,4 @@ const SEOForm = () => {
         </React.Fragment>
     )
 }
-
 export default SEOForm

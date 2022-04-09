@@ -168,7 +168,17 @@ const validationOption = {
     },
     roleName:{
         required: "Role name is required"
-    }
+    },
+    taxPercent:{
+        required: "Tax Percentage is required"
+    },
+    limit:{
+        required: "Limit is required"
+    },
+    expiry:{
+        required: "Expiry is required"
+    },
+
 }
 
 export default validationOption

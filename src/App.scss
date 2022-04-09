@@ -78,3 +78,17 @@
     transition: all 0.5s ease;
   }
 }
+
+.all_btns{
+  position: relative;
+  float: right;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  font-size: 12px;
+  border: none !important;
+  background-color: #003f67 !important;
+  color: white !important;
+  font-family: Montserrat, serif;
+  margin-top: 20px;
+}

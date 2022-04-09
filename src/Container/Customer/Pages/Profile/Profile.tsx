@@ -3,7 +3,7 @@ import Profile from "../../../../Components/Profile/Profile";
 
 const CustomerProfile = () => {
     return (
-       <Profile />
+       <Profile heading={'Edit Customer Profile'} role={false} />
     );
 };
 export default CustomerProfile;

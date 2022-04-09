@@ -1,98 +1,45 @@
 import React from 'react';
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import Select from 'react-select';
-import { useForm, Controller } from "react-hook-form"
-import {errorNotify} from "../../../../Utils/toast";
-import inputValidation from '../../../../lib/Validation';
-
-type AttributesInterface = {
-    attributeName: string,
-    parentAttribute: {
-        label: string,
-        value: string
-    }
-}
+import { useNavigate } from "react-router-dom";
+import MuiDataTable from "../../../../Components/MuiDataTable/MuiDataTable";
+import { categoryData } from "../../../../hooks/admin";
+import { Button } from 'react-bootstrap'
 
 const Attributes = () => {
-
-    const { register, handleSubmit, formState: { errors }, reset, control } = useForm<AttributesInterface>();
-
-    const onSubmitHandler = handleSubmit((data) => {
-        if (!data.parentAttribute) {
-            errorNotify("Please Select any Parent Attribute")
-        }
-        else {
-            console.log("data", data);
-            console.log('success')
-            reset()
-        }
-
-    })
-
-    const AttributesOptions = [
-        { value: 'mens', label: 'mens' },
-        { value: 'women', label: 'women' },
-        { value: 'child', label: 'child' }
+    const navigate = useNavigate();
+    const editAttributesHandler = () => {
+        navigate('/admin/create-attributes/433')
+    }
+    let columns = [
+        'ID',
+        'Attribute Name',
+        {
+            name: "Actions",
+            options: {
+                customBodyRender: (value: any, tableMeta: any) => {
+                    return (
+                        <React.Fragment>
+                            <button className={'btn mx-2'} onClick={editAttributesHandler}>
+                                Edit
+                            </button>
+                            <button className={'btn'}>
+                                Delete
+                            </button>
+                        </React.Fragment>
+                    )
+                }
+            },
+        },
     ]
-
-    const countries = ['Canada', 'US', 'Chicago', 'Las Vegas']
 
     return (
         <div className={'page_responsive'}>
             <h3> Attributes </h3>
 
-            <Container fluid>
-                <Row className={'category'}>
-                    <Col md={6}>
-                        <p> Add New Attributes </p>
-                        <Form onSubmit={onSubmitHandler}>
-                            <Row>
-                                <Col md={8}>
-                                    <Form.Group className="mb-3">
-                                        <label>Attribute Name</label>
-                                        <Form.Control type="text" {...register('attributeName', inputValidation.attributeName)} />
-                                        <small className="text-danger"> {errors.attributeName && errors.attributeName.message} </small>
-                                    </Form.Group>
-                                </Col>
-                                <Col md={8}>
-                                    <label>Parent Attributes</label>
-                                    <Controller
-                                        name="parentAttribute"
-                                        control={control}
-                                        render={({ field }) => {
-                                            return (
-                                                <Select options={AttributesOptions}
-                                                        {...field}
-                                                />
-                                            );
-                                        }}
-                                    />
-                                </Col>
-                                <Col md={8}>
-                                    <Button type= "submit">Add New Attributes</Button>
-                                </Col>
-                            </Row>
-                        </Form>
-                    </Col>
-                    <Col md={6} className="Bulk_actions">
-                        <p> Bulk Actions </p>
-                        {
-                            countries.map((country) => (
-                                <div key={`default-${country}`} className="mb-3">
-                                    <Form.Check
-                                        type='checkbox'
-                                        id={`default-${country}`}
-                                        label={country}
-                                    />
-                                </div>
-                            ))
-                        }
-                        <Button>Apply</Button>
-                    </Col>
-                </Row>
-            </Container>
+            <div className={'create_product_btn'}>
+                <Button className='all_btns' onClick={() => navigate('/admin/create-attributes')}>Create Attributes</Button>
+            </div>
+            <MuiDataTable data={categoryData} columns={columns} />
         </div>
     );
 };
-
 export default Attributes;

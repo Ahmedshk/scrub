@@ -4,17 +4,16 @@ import MenuModal from "../../../../Components/Modal/Modal";
 import MuiDataTable from "../../../../Components/MuiDataTable/MuiDataTable";
 import { useForm } from "react-hook-form"
 import inputValidation from '../../../../lib/Validation';
-
-type EditMenuInterface = {
-    menuName: string,
-}
+import {EditMenuInterface} from '../../../../Interfaces/index'
+import {MenuData} from "../../../../hooks/admin";
+import {successNotify} from "../../../../Utils/toast";
 
 const EditMenu = () => {
     const [show, setShow] = useState(false);
     const { register, handleSubmit, formState: { errors }, reset } = useForm<EditMenuInterface>();
     const onSubmitHandler = handleSubmit((data) => {
         console.log("data", data);
-        console.log('success')
+        successNotify('success')
         reset()
     })
 
@@ -34,12 +33,7 @@ const EditMenu = () => {
             },
         },
     ]
-    const data = [
-        ["1", "Home"],
-        ["2", "About"],
-        ["3", "Contact"],
-        ["4", "FAQ"],
-    ];
+    
 
     const editMenuHandler = () => {
         setShow(true)
@@ -59,13 +53,13 @@ const EditMenu = () => {
             </Form>
         </MenuModal>
     )
-
+    
     return (
         <div className={'page_responsive'}>
             {modal}
             <h3> Edit Menu </h3>
 
-            <MuiDataTable data={data} columns={columns} />
+            <MuiDataTable data={MenuData} columns={columns} />
         </div>
     );
 };

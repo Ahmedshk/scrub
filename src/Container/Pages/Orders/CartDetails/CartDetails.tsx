@@ -5,17 +5,8 @@ import { FiEdit } from 'react-icons/fi'
 import { useForm } from "react-hook-form";
 import inputValidation from '../../../../lib/Validation';
 import "./CartDetails.scss";
-
-type ShippingDetails = {
-    name: string,
-    address: string,
-    city: string,
-    country: string,
-    cardNumber:number,
-    cvv:number,
-    expires:number
-
-}
+import { ShippingDetails } from '../../../../Interfaces/index'
+import { errorNotify } from "../../../../Utils/toast";
 
 const CartDetails = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<ShippingDetails>();
@@ -24,11 +15,15 @@ const CartDetails = () => {
 
     const onSubmitHandler = handleSubmit((data) => {
         setIsLoading(true)
-        if(paymentChange === ""){
-            setPaymentChange("Please select any method")
+        if (!paymentChange) {
+            setIsLoading(false)
+            errorNotify('please select any method')
         }
-        console.log("data", data);
-        reset()
+        else {
+            console.log("data", data);
+            reset()
+        }
+
     })
 
     return (

@@ -3,6 +3,21 @@
   width: 100%;
   background-size: cover;
   height: 300px;
+  h1{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.shop_main{
+
+  background: url('../../assets/img/clothes.png');
+  width: 100%;
+  background-size: cover;
+  height: 300px;
 
   h1{
     color: #fff;
@@ -11,6 +26,7 @@
     align-items: center;
     height: 100%;
   }
+    
 }
 
 .policy_bg{

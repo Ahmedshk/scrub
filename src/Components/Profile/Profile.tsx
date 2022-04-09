@@ -1,27 +1,20 @@
-import React, {useEffect, useState} from 'react';
-import {Container, Row, Col, Form, Spinner} from "react-bootstrap";
-import {FiUpload} from "react-icons/fi";
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Col, Form, Spinner, Button } from "react-bootstrap";
+import { FiUpload } from "react-icons/fi";
 import Card5 from "../../assets/img/card5.jpg";
 import Select from 'react-select';
 import { useForm, Controller } from "react-hook-form";
-import {errorNotify} from "../../Utils/toast";
+import { errorNotify } from "../../Utils/toast";
 import inputValidation from '../../lib/Validation';
 import "./Profile.scss";
+import { ProfileInterface } from '../../Interfaces/index'
+import {useNavigate} from 'react-router-dom';
 
-type ProfileInterface = {
-    name: string,
-    email: string,
-    contactNo: number,
-    address: string,
-    image: File,
-    role: string
-}
-
-const Profile: React.FC<any> = ({role, heading}) => {
+const Profile: React.FC<any> = ({ role, heading }) => {
+    const navigate = useNavigate()
     const [roleOptions, setRoleOptions] = useState<any>([]);
     const { register, handleSubmit, formState: { errors }, reset, control } = useForm<ProfileInterface>();
     const [isLoading, setIsLoading] = useState(false)
-
     useEffect(() => {
         setRoleOptions([
             { value: 'C One', label: 'C One' },
@@ -30,28 +23,24 @@ const Profile: React.FC<any> = ({role, heading}) => {
         ])
     }, [])
 
-
-        const onSubmitHandler = handleSubmit((data) => {
-            setIsLoading(true)
-
-            if(role){
-                if(!data.role){
-                    setIsLoading(false)
-                    errorNotify('please select role')
-                }
-                else{
-                    setIsLoading(false)
-                    console.log("success", data);
-                }
-            }
-            else{
+    const onSubmitHandler = handleSubmit((data) => {
+        setIsLoading(true)
+        if (role) {
+            if (!data.role) {
                 setIsLoading(false)
-                console.log('success', data)
+                errorNotify('please select role')
             }
-            reset()
-        })
-
-
+            else {
+                setIsLoading(false)
+                console.log("success", data);
+            }
+        }
+        else {
+            setIsLoading(false)
+            console.log('success', data)
+        }
+        reset()
+    })
     return (
         <div className={'page_responsive'}>
             <h3>{heading}</h3>
@@ -66,7 +55,7 @@ const Profile: React.FC<any> = ({role, heading}) => {
                                 <input
                                     type="file"
                                     id="file-input"
-                                    {...register('image', inputValidation.image)}
+                                    {...register('image')}
                                     className="file_input" />
                                 <label className="file_label" htmlFor="file-input">
                                     <FiUpload />
@@ -98,35 +87,39 @@ const Profile: React.FC<any> = ({role, heading}) => {
                                 <small className="text-danger"> {errors.address && errors.address.message} </small>
                             </Form.Group>
                         </Col>
-                    {
-                        role ? <Col md={9}>
-                            <Controller
-                                name="role"
-                                control={control}
-                                render={({ field }) => {
-                                    return (
-                                        <Select
-                                            {...field}
-                                            options={roleOptions}
-                                            className="basic-multi-select mb-3"
-                                            classNamePrefix="select"
-                                            placeholder="Select Role"
-                                        />
-                                    );
-                                }}
-                            />
-                        </Col> : null
-                    }
-                    <Col md={9}>
-                        <div className='text-center'>
-                            {isLoading ? <Spinner className='mt-3' animation={'border'} /> :
-                                <button className='submit_btn mt-4' type="submit">
-                                    Save Changes
-                                </button>
-                            }
-                        </div>
-                    </Col>
-                </Row>
+                        {
+                            role ? <Col md={9}>
+                                <Controller
+                                    name="role"
+                                    control={control}
+                                    render={({ field }) => {
+                                        return (
+                                            <Select
+                                                {...field}
+                                                options={roleOptions}
+                                                className="basic-multi-select"
+                                                classNamePrefix="select"
+                                                placeholder="Select Role"
+                                            />
+                                        );
+                                    }}
+                                />
+                            </Col> : null
+                        }
+                        <Col md={9}>
+                            <div className='text-center'>
+                                {isLoading ? <Spinner className='mt-3' animation={'border'} /> :
+                                    <Button className='all_btns' type="submit">
+                                        Save Changes
+                                    </Button>
+                                }
+                            </div>
+
+                            <div>
+                                <Button className='all_btns mx-2' onClick={()=>navigate("/reset-password")}>Update Password</Button>
+                            </div>
+                        </Col>
+                    </Row>
                 </Form>
             </Container>
         </div>

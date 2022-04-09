@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import MuiDataTable from "../../../../Components/MuiDataTable/MuiDataTable";
 import DeleteModal from "../../../../Components/DeleteModal/DeleteModal";
+import {CouponData} from "../../../../hooks/admin";
 import './Coupons.scss';
+import {Button} from 'react-bootstrap'
 
 const Coupons = () => {
     const navigate = useNavigate();
@@ -37,23 +39,17 @@ const Coupons = () => {
         setShow(!show)
     }
 
-    const data = [
-        ["FirstCoupon", "HappyScrub", "30$"],
-        ["SecondCoupon", "HappyScrub", "30$"],
-        ["ThirdCoupon", "HappyScrub", "30$"],
-        ["FourthCoupon", "Trousers", "30$"],
-    ];
 
     return (
         <div className='page_responsive'>
             <DeleteModal show={show} onClose={() => setShow(!show)} onSubmit={onDeleteSubmit}/>
             <h3>Coupons</h3>
-            <div className='btn_container'>
-                <button onClick={() => navigate('/admin/create-coupon')}> Create Coupons </button>
+            <div>
+                <Button className= 'all_btns' onClick={() => navigate('/admin/create-coupon')}> Create Coupons </Button>
             </div>
             <div className="coupon_container">
                 <MuiDataTable
-                    data={data}
+                    data={CouponData}
                     columns={columns}
                 />
             </div>

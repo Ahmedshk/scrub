@@ -1,15 +1,9 @@
 import React from 'react'
-import { Container, Col, Row, Form } from 'react-bootstrap'
+import { Container, Col, Row, Form,Button} from 'react-bootstrap'
 import './Slider.scss'
 import { useForm } from "react-hook-form";
 import inputValidation from '../../../../lib/Validation';
-
-type SliderInterface = {
-    image1: File,
-    image2: File,
-    image3: File,
-    image4: File,
-}
+import {SliderInterface} from '../../../../Interfaces/index'
 
 const Slider = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<SliderInterface>();
@@ -50,8 +44,8 @@ const Slider = () => {
                                     <small className="text-danger"> {errors.image4 && errors.image4.message} </small>
                                 </Form.Group>
 
-                                <div className='save_btn_container'>
-                                    <button>Save</button>
+                                <div className='save_container'>
+                                    <Button type="submit" className="all_btns">Save</Button>
                                 </div>
                             </Form>
                         </div>

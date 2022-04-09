@@ -5,20 +5,9 @@ import './Login.scss';
 import { useForm } from "react-hook-form";
 import inputValidation from '../../../lib/Validation';
 import {USER_ROLE} from "../../../App";
-
-type ILogin = {
-    email: string,
-    password: string,
-    role: string
-}
-
-export enum LoginType {
-    customer = '/login',
-    admin = "/admin/login"
-}
+import {ILogin,LoginType} from '../../../Interfaces/index'
 
 const Login = () => {
-
     const navigate = useNavigate();
     const location = useLocation()
     const [loginType, setLoginType] = useState("")
@@ -37,7 +26,8 @@ const Login = () => {
                 setLoginType(LoginType.admin)
                 break;
         }
-    }, [])
+    }, [location.pathname, setValue])
+    
     const onSubmit = handleSubmit((data) => {
         setIsLoading(true)
         switch (loginType) {
@@ -72,7 +62,6 @@ const Login = () => {
                     </div>
 
                     <Link to="/forget-password"> <p className="forget_pass">Forgot Password?</p> </Link>
-
                     <div className='text-center'>
                         {isLoading ? <Spinner className='mt-3' animation={'border'} /> :
                             <button className="main_login">
